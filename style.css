@@ -21,3 +21,79 @@ body{
     top: 0;
     z-index: 10;
 }
+
+.logo-area{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img{
+    height: 50px;
+    width: auto;
+}
+
+.portal-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-nav ul{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: #d3e8ff;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+    color: #ffffff;
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+}
+
+.hero{
+    background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p{
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.btn-primary:hover{
+    background-color: #dbeafe;
+}
+
+.content-section{
+    padding: 60px 40px;
+    background: white;
+    text-align: center;
+}
+
+.content-section h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.content-section p{
+    font-size: 18px;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
