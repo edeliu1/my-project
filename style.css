@@ -176,3 +176,28 @@ body{
     flex-direction: column;
     gap: 14px;
 }
+
+.login-section{
+    padding: 60px 40px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.login-section h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #0a2342;
+}
+
+.login-form{
+    max-width: 420px;
+    margin: 0 auto;
+    background: #f1f5ff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #d7e3ff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
