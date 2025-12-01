@@ -176,28 +176,19 @@ body{
     flex-direction: column;
     gap: 14px;
 }
-<<<<<<< HEAD
 
 .login-section{
-=======
-.login-section {
->>>>>>> a2f4614d6411218c573784006af5ecb1da0e5747
     padding: 60px 40px;
     background: #ffffff;
     text-align: center;
 }
 
-<<<<<<< HEAD
 .login-section h2{
-=======
-.login-section h2 {
->>>>>>> a2f4614d6411218c573784006af5ecb1da0e5747
     font-size: 32px;
     margin-bottom: 20px;
     color: #0a2342;
 }
 
-<<<<<<< HEAD
 .login-form{
     max-width: 420px;
     margin: 0 auto;
@@ -209,18 +200,4 @@ body{
     display: flex;
     flex-direction: column;
     gap: 16px;
-=======
-.login-form {
-    max-width: 420px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    background: #f5f7ff;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #d4e0ff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08)!;
->>>>>>> a2f4614d6411218c573784006af5ecb1da0e5747
 }
