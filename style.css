@@ -176,28 +176,75 @@ body{
     flex-direction: column;
     gap: 14px;
 }
-.login-section {
+
+.login-section{
     padding: 60px 40px;
     background: #ffffff;
     text-align: center;
 }
 
-.login-section h2 {
+.login-section h2{
     font-size: 32px;
     margin-bottom: 20px;
     color: #0a2342;
 }
 
-.login-form {
+.login-form{
     max-width: 420px;
     margin: 0 auto;
+    background: #f1f5ff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #d7e3ff;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
+}
 
-    background: #f5f7ff;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #d4e0ff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08)!;
+.login-form label{
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    color: #0a2342;
+}
+
+.login-form input{
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #bcd0ff;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+    background: #ffffff;
+}
+
+.login-form input:focus{
+    border-color: #1d4ed8;
+    box-shadow: 0 0 4px rgba(29, 78, 216, 0.4);
+}
+
+.login-form .btn-primary{
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.small-text{
+    font-size: 14px;
+    color: #0a2342;
+}
+
+.small-text a{
+    color: #1d4ed8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.small-text a:hover{
+    text-decoration: underline;
 }
