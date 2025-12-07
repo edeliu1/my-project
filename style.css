@@ -298,3 +298,25 @@ body{
     font-weight: bold;
     font-size: 18px;
 }
+
+.alerts-section {
+    background: #f9fbff;
+    padding: 50px 40px;
+}
+
+.alerts-box {
+    background: #d9e8ff;
+    padding: 18px 20px;
+    border-left: 5px solid #1d4ed8;
+    margin: 12px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    font-size: 17px;
+    text-align: left;
+}
+
+.alerts-box.warning {
+    background: #fff5d9;
+    border-left: 5px solid #f59e0b;
+
+}
