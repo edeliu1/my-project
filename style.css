@@ -320,3 +320,39 @@ body{
     border-left: 5px solid #f59e0b;
 
 }
+
+.services-section {
+    padding: 60px 40px;
+    background: #ffffff;
+    text-align: center;
+
+}
+
+.services-section h1 {
+    font-size: 34px;
+    margin-bottom: 25px;
+    color: #0a2342;
+
+}
+
+.service-box {
+    background: #f1f5ff;
+    padding: 25px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #d7e3ff;
+}
+
+.service-box h2 {
+    font-size: 22px;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+
+}
+
+.service-box p {
+    font-size: 16px;
+    line-height: 1.6;
+}
