@@ -248,3 +248,53 @@ body{
 .small-text a:hover{
     text-decoration: underline;
 }
+
+.emergency-section{
+    background: #ffe8e8;
+    padding: 60px 40px;
+    border-top: 3px solid #d40000;
+    text-align: center;
+
+}
+
+.emergency-section h2{
+    color: #b30000;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.emergency-grid{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+
+}
+
+.emergency-box{
+    background: white;
+    border: 2px solid #ffb3b3;
+    padding: 20px 25px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+
+}
+
+.emergency-box:hover{
+    transform: translateY(-5px);
+    background: #fff2f2;
+
+}
+
+.emergency-box h3{
+    color: #b30000;
+    margin-bottom: 5px;
+
+}
+
+.emergency-box p{
+    font-weight: bold;
+    font-size: 18px;
+}
