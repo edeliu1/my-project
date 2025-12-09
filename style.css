@@ -285,7 +285,25 @@ body{
     font-size: 34px;
     margin-bottom: 25px;
     color: #0a2342;
+}
 
+.services-header{
+    text-align: left;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.services-header h1{
+    font-size: 48px;
+    font-weight: 800;
+    color: #0a2342;
+    line-height: 1.1;
+}
+
+.services-header p{
+    font-size: 18px;
+    color: #3b4a6b;
+    margin-top: 12px;
 }
 
 .service-box {
