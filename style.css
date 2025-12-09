@@ -249,56 +249,6 @@ body{
     text-decoration: underline;
 }
 
-.services-section{
-    background: #ffe8e8;
-    padding: 60px 40px;
-    border-top: 3px solid #d40000;
-    text-align: center;
-
-}
-
-.services-section h2{
-    color: #b30000;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.services-grid{
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-
-}
-
-.services-box{
-    background: white;
-    border: 2px solid #ffb3b3;
-    padding: 20px 25px;
-    border-radius: 12px;
-    width: 220px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-
-}
-
-.services-box:hover{
-    transform: translateY(-5px);
-    background: #fff2f2;
-
-}
-
-.services-box h3{
-    color: #b30000;
-    margin-bottom: 5px;
-
-}
-
-.services-box p{
-    font-weight: bold;
-    font-size: 18px;
-}
-
 .alerts-section {
     background: #f9fbff;
     padding: 50px 40px;
