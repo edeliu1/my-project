@@ -148,6 +148,7 @@ body{
 
 .service-card{
     background: #f1f5ff;
+    position: relative;
     padding: 25px 20px;
     border-radius: 12px;
     text-decoration: none;
@@ -162,9 +163,25 @@ body{
     gap: 12px;
 }
 
+.service-card::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #1d4ed8;
+    bottom: 0;
+    left: 50%;
+    transition: 0.3s ease;
+}
+
 .service-card:hover{
     background: #e2ecff;
     transform: translateY(-4px);
+}
+
+.service-card: hover :: after{
+    width: 100%;
+    left: 0;
 }
 
 .icon-circle{
