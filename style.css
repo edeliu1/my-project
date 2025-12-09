@@ -390,6 +390,17 @@ body{
     }
 }
 
+@media (max-width: 768px){
+    .services-header h1{
+        font-size: 36px;
+    }
+    .services-header{
+        text-align: center;
+    }
+    .service-box{
+        padding: 25px 20px;
+    }
+}
 @media (max-width: 600px){
     .login-form,
     .contact-form{
