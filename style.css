@@ -218,11 +218,6 @@ box-shadow: 0 10px 25px rgba(29,78,216,0.4);
     margin-top: 10px;
     font-size: 17px;
 
-    .contact-form input,
-.contact-form textarea {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .contact-form{
@@ -523,6 +518,12 @@ color: #0a2342;
 
 }
 
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
 .glass-box {
 background: rgba(255,255,255,0.35);
 backdrop-filter: blur(10px);
@@ -531,3 +532,4 @@ padding: 25px;
 border:1px solid rgba(255,255,255,0.25);
 box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
+ 
