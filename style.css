@@ -197,7 +197,7 @@ body{
     color: white;
     border-radius: 50%;
     font-size: 30px;
-
+box-shadow: 0 10px 25px rgba(29,78,216,0.4);
     display: flex;
     align-items: center;
     justify-content: center;
