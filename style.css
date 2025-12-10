@@ -217,6 +217,12 @@ box-shadow: 0 10px 25px rgba(29,78,216,0.4);
 #contact p{
     margin-top: 10px;
     font-size: 17px;
+
+    .contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-form{
@@ -227,6 +233,8 @@ box-shadow: 0 10px 25px rgba(29,78,216,0.4);
     display: flex;
     flex-direction: column;
     gap: 14px;
+
+   
 }
 
 .hero {
