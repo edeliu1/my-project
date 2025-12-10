@@ -264,7 +264,7 @@ box-shadow: 0 10px 25px rgba(29,78,216,0.4);
 
 .login-section{
     padding: 60px 40px;
-    background: #ffffff;
+    background:linear-gradient(135deg,#eef2ff,#f8fbff);
     text-align: center;
 }
 
