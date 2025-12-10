@@ -502,3 +502,11 @@ body{
         font-size: 16px;
     }
 }
+
+body {
+background: linear-gradient(180deg,#f4f7ff,#eef2ff);
+color: #0a2342;
+
+}
+
+
