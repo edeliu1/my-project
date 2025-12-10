@@ -340,15 +340,14 @@ body{
     padding: 50px 40px;
 }
 
-.alerts-box {
+.alert-box {
     background: #d9e8ff;
     padding: 18px 20px;
     border-left: 5px solid #1d4ed8;
-    margin: 12px auto;
+    margin: 15px auto;
     max-width: 800px;
-    border-radius: 8px;
-    font-size: 17px;
-    text-align: left;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 .alerts-box.warning {
