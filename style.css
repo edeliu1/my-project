@@ -13,6 +13,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+
     background-image:
     radial-gradient(circle at 15% 20%,
     rgba(29,78,216,0.12),
@@ -26,6 +27,9 @@ body{
 
     background-attachment:fixed;
     background-size:200% 200%;
+
+animation:smartBackground 16s ease-in-out infinite alternate;
+
 }
 
 .main-header{
