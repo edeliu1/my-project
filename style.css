@@ -179,7 +179,7 @@ body{
     transform: translateY(-4px);
 }
 
-.service-card: hover :: after{
+.service-card:hover::after {
     width: 100%;
     left: 0;
 }
