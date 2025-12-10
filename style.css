@@ -120,6 +120,21 @@ animation:smartBackground 16s ease-in-out infinite alternate;
     }
 }
 
+@keyframes smartBackground{
+    0%
+{background-position: 0% 0%;
+
+}
+100% {
+
+    background-position: 100% 100%;
+}
+
+
+
+
+}
+
 .btn-primary{
     display: inline-block;
     padding: 14px 34px;
