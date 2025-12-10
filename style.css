@@ -224,7 +224,6 @@ body{
     gap: 14px;
 }
 
-<<<<<<< HEAD
 .hero {
     height: 90vh;
     background: url("hero-image.png") no-repeat center center/cover;
@@ -264,7 +263,6 @@ body{
 
 
 
-=======
 .login-section{
     padding: 60px 40px;
     background: #ffffff;
@@ -505,4 +503,3 @@ body{
         font-size: 16px;
     }
 }
->>>>>>> 9a07381a7ab44173d65ba35cf8bb69120728d904
