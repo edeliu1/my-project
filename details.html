@@ -37,7 +37,27 @@ description:"Bus lines,train schedules,ticket costs and transportation updates",
 
 documents:{
 title:"Document",
-description:"Apply online for certificate
-
+description:"Apply online for certificates,personal documents and official forms",
 }
+
+requests:{
+title:"Online requests",
+description:"Submit complaints,digital forms and service reports online",
+}
+};
+
+if(data[service]) {
+document.getElementById("service-title").textContent=data[service].title;
+document.getElementById("service-description").textContent=data[service].description;
+}
+else
+{
+    document.getElementById("service-title").textContent="Service not found";
+    document.getElementById("service-description").textContent="The selected service does not exist";
+}
+
+</script>
+
+</body>
+</html>
 
