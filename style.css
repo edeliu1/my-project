@@ -111,10 +111,16 @@ body{
 }
 
 .content-section{
-    padding: 60px 40px;
+    padding: 80px 40px;
     background: white;
     text-align: center;
+    position: relative;
 }
+.content-section:nth-child(even) {
+    background: #f1f5ff;
+
+}
+
 
 .content-section h2{
     font-size: 32px;
