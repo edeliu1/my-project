@@ -13,8 +13,19 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    background-image:
+    radial-gradient(circle at 15% 20%,
+    rgba(29,78,216,0.12),
+    transparent 45%), 
+    radial-gradient(circle at 85% 30%,
+    rgba(59,130,246,0.10),
+    transparent 50%),
+    radial-gradient(circle at 50 %,85
+    rgba(14,165,233,0.08),
+    transparent 60%,);
 
-
+    background-attachment:fixed;
+    background-size:200% 200%;
 }
 
 .main-header{
