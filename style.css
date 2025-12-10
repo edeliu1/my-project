@@ -411,6 +411,14 @@ box-shadow: 0 10px 25px rgba(29,78,216,0.4);
     align-items: stretch;
 }
 
+.reveal {
+opacity: 0;
+transform: translateY(40px);
+transition: all0.8s ease;
+
+
+}
+
 
 .service-box {
     background: linear-gradient(145deg, #f1f6ff, #ffffff);
