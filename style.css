@@ -6,30 +6,25 @@
 }
 
 body{
-    background:linear-gradient(160deg,#eef2ff 0% 
-    #f4f7ff 40%
-    #ffffff 100%);
-    color:#0a2342
+    background:linear-gradient(160deg,#eef2ff 0%, #f4f7ff 40%, #ffffff 100%);
+    color:#0a2342;
     font-family:Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 
     background-image:
-    radial-gradient(circle at 15% 20%,
-    rgba(29,78,216,0.12),
-    transparent 45%), 
-    radial-gradient(circle at 85% 30%,
-    rgba(59,130,246,0.10),
-    transparent 50%),
-    radial-gradient(circle at 50 %,85
-    rgba(14,165,233,0.08),
-    transparent 60%,);
-
-    background-attachment:fixed;
-    background-size:200% 200%;
-
-animation:smartBackground 16s ease-in-out infinite alternate;
-
+        radial-gradient(circle at 15% 20%,
+        rgba(29,78,216,0.12),
+        transparent 45%), 
+        radial-gradient(circle at 85% 30%,
+        rgba(59,130,246,0.10),
+        transparent 50%),
+        radial-gradient(circle at 50%, 85,
+        rgba(14,165,233,0.08),
+        transparent 60%,);
+    background-attachment: fixed;
+    background-size: 200% 200%;
+    animation: smartBackground 16s ease-in-out infinite alternate;
 }
 
 .main-header{
@@ -43,7 +38,7 @@ animation:smartBackground 16s ease-in-out infinite alternate;
     top: 0;
     z-index: 10;
 
-    background: rgba10,35,66,0.65);
+    background: rgba(35,66,0.65);
     backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(255,255,255,0.15);
 }
@@ -120,19 +115,16 @@ animation:smartBackground 16s ease-in-out infinite alternate;
     }
 }
 
-@keyframes smartBackground{
-    0%
-{background-position: 0% 0%;
-
-}
-100% {
-
-    background-position: 100% 100%;
-}
-
-
-
-
+@keyframes smartBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .btn-primary{
@@ -228,9 +220,9 @@ animation:smartBackground 16s ease-in-out infinite alternate;
 }
 
 .service-card:hover{
-    transform: translateY(-8px) scale(1.04)
+    transform: translateY(-8px) scale(1.04);
     box-shadow: 0 15x 35px rgba(0,0,0,0.12);
-    border-color:#1d4ed8;
+    border-color: #1d4ed4;
 }
 
 .service-card:hover::after {
