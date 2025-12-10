@@ -112,9 +112,14 @@ body{
 
 .content-section{
     padding: 80px 40px;
-    background: white;
+    background:rgba(255,255,255,0.94);
     text-align: center;
     position: relative;
+    backdrop-filter: blur 6px;
+    border-radius: 22px;
+    margin: 50px auto;
+    max-width: 1200px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08)
 }
 .content-section:nth-child(even) {
     background: #f1f5ff;
