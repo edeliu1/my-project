@@ -419,6 +419,12 @@ transition: all0.8s ease;
 
 }
 
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+
+}
+
 
 .service-box {
     background: linear-gradient(145deg, #f1f6ff, #ffffff);
