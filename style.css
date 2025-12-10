@@ -153,14 +153,14 @@ body{
 }
 
 .service-card{
-    background: #f1f5ff;
+    background: white;
     position: relative;
-    padding: 25px 20px;
-    border-radius: 12px;
+    padding: 30px 20px;
+    border-radius: 14px;
     text-decoration: none;
     color: #0a2342;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);;
-    transition: 0.25s ease;
+    transition: 0.35s ease;
     border: 1px solid #d7e3ff;
 
     display: flex;
@@ -181,8 +181,8 @@ body{
 }
 
 .service-card:hover{
-    background: #e2ecff;
-    transform: translateY(-4px);
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(29,78,216,0.25);
 }
 
 .service-card:hover::after {
