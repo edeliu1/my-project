@@ -448,6 +448,14 @@ box-shadow: 0 10px 25px rgba(29,78,216,0.4);
 .service-box:hover .service-icon{
     transform: rotate(6deg) scale(1.1);
 }
+.main-footer {
+background: #0a2342;
+color: #dbeafe;
+padding: 20px;
+text-align: center;
+font-size: 14px;
+}
+
 
 @media (max-width: 768px) {
     .main-header{
