@@ -523,4 +523,11 @@ color: #0a2342;
 
 }
 
-
+.glass-box {
+background: rgba(255,255,255,0.35);
+backdrop-filter: blur(10px);
+border-radius: 18p ;
+padding: 25px;
+border:1px solid rgba(255,255,255,0.25);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
