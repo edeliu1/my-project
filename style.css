@@ -588,3 +588,8 @@ color: #0a2342;
 }
 }
  
+.content-section{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s ease;
+}
