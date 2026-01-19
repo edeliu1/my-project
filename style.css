@@ -38,7 +38,7 @@ body{
     top: 0;
     z-index: 10;
 
-    background: rgba(35,66,0.65);
+    background: rgba(10, 35, 66, 0.85);
     backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(255,255,255,0.15);
 }
