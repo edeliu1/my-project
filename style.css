@@ -38,7 +38,7 @@ body{
     top: 0;
     z-index: 10;
 
-    background: rgba(135deg, #2563eb, #1e40af);
+    background: linear-gradient(135deg, #2563eb, #1e40af);
     backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(255,255,255,0.15);
 }
