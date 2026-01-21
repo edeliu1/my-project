@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+echo "<pre>"; print_r($_SESSION); echo "</pre>";
+exit;
+
 
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
