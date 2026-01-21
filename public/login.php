@@ -25,26 +25,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 'email' => $user['email'],
                 'role' => $user['role']
             ];
+            $_SESSION['user'] = [ /* ... */ ];
+echo "SESSION SET OK. <pre>"; print_r($_SESSION); echo "</pre>";
+exit;
+
 
             if($user['role'] === 'admin'){
-                header("Location: dashboard.php");
+                header("Location: /my-project/public/dashboard.php");
             }else{
-                header("Location: index.php");
+                header("Location: /my-project/public/index.html");
             }
             exit;
         }else{
             $error = 'Email ose password eshte gabim!';
         }
     }
-}
-
-if ($error !== ''){
-    echo "<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        var el = document.getElementById('error');
-        if (el) el.innerText = " . json_encode($error) . ";
-    });
-    </script>";
 }
 
 include __DIR__ . '/login.html';
