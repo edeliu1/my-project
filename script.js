@@ -110,41 +110,44 @@ const revealOnScroll = () => {
 
 window.addEventListener("scroll", revealOnScroll);
 
-document.querySelectionALL(".faq-item h3").forEach(h => {
+document.querySelectorAll(".faq-item h3").forEach(h => {
   h.style.cursor = "pointer";
-  h.addEventListener("click",()=>){
+  h.addEventListener("click",() => {
     const p = h.nextElementSibling;
-    if(!p)return;
-    p.style.display = (p.style.display ==="none") "block" : "none";
+    if(!p) return;
+    p.style.display = (p.style.display ==="none") ? "block" : "none";
   });
 });
 
 
-const contactForm =
-document.getElementById("contactForm");
-if(contactForm){
-  const alertBox = 
-  document.getElementByld("contactError");
+const contactForm = document.getElementById("contactForm");
 
-  contactForm/addEventListener("submit",(e)=>{
+if(contactForm){
+  const alertBox = document.getElementById("contactError");
+
+  contactForm.addEventListener("submit",(e)=>{
     e.preventDefault();
 
-    const name=
-    contactForm.querySelector("input[name='name']");
-    const email=
-    contactForm.querySelector("input[name='email']");
+    const name = contactForm.querySelector("input[name='name']");
+    const email = contactForm.querySelector("input[name='email']");
+    const message = contactForm.querySelector("textarea[name='message']");
 
-    const error = [];
+    const errors = [];
 
     if(!name.value.trim()) errors.push("Please enter your name.");
     if(!email.value.trim()) errors.push("Please enter your email.");
-    if(!email.value  && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) error.push("Email format is not valid.");
-    if(!message.value.trim()) error.push("Please write a message.");
+    if(email.value  
+      && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+    ){
+      errors.push("Email format is not valid.");
+    }
+
+    if(!message.value.trim()) errors.push("Please write a message.");
 
     if(alertBox) alertBox.textContent = errors.join("");
 
-    if(errors.length === null){
-      alert("Messafe sent successfully! (demo)");
+    if(errors.length === 0){
+      alert("Message sent successfully! (demo)");
       contactForm.reset();
       if(alertBox) alertBox.textContent = "";
     }
@@ -163,15 +166,16 @@ if(slider){
   const renderDots = () => {
     if(!dotsWrap) return;
     dotsWrap.innerHTML = "";
-    cards.forEach((_, i => {
+
+    cards.forEach((_, i) => {
       const d = document.createElement("button");
       d.type = "button";
-      d.className ="dot" + (i === idx ? "active" : "");
+      d.className ="dot" + (i === idx ? " active" : "");
       d.addEventListener("click", () => {
         idx = i;
         update();
       });
       dotsWrap.appendChild(d);
-    }));
-  }
+    });
+  };
 }
