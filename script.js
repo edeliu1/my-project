@@ -150,19 +150,21 @@ if(slider){
     renderDots();
   };
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      idx = (idx - 1 + cards.length) % cards.length;
-      update();
-    });
-  }
+  prevBtn && prevBtn.addEventListener("click", () => {
+    idx = (idx - 1 + cards.length) % cards.length;
+    update();
+  });
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      idx = (idx + 1) % cards.length;
-      update();
-    });
-  }
+  nextBtn && nextBtn.addEventListener("click", () => {
+    idx = (idx + 1) % cards.length;
+    update();
+  });
 
-  update();
+  setInterval(() => {
+    idx = (idx + 1) % cards.length;
+    update();
+  }, 5000);
+
+  update(); 
+  
 }
