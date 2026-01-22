@@ -36,43 +36,16 @@ if(aboutSection){
     "This Smart City Platform provides digital access to healthcare, education, transportation, and municipal services for the citizens of Fushe Kosova.";
 }
 
-const contactForm = document.querySelector("#contactForm");
-
-if(contactForm){
-  contactForm.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const inputs = contactForm.querySelectorAll("input, textarea");
-    let valid = true;
-
-    inputs.forEach(input => {
-      if(input.value.trim() === ""){
-        valid = false;
-        input.style.borderColor = "red";
-      } else {
-        input.style.borderColor = "#bcd0ff";
-      }
-    });
-
-    if(valid){
-      alert("Message sent successfully!");
-      contactForm.reset();
-    } else {
-      alert("Please fill in all fields.");
-    }
-  });
-}
-
 const loginForm = document.querySelector("#loginForm");
 
-if(loginForm){
-  loginForm.addEventListener("submit", function(e){
+if (loginForm) {
+  loginForm.addEventListener("submit", e => {
     e.preventDefault();
 
     const email = loginForm.querySelector("input[type='email']").value;
     const password = loginForm.querySelector("input[type='password']").value;
 
-    if(email && password.length >= 6){
+    if (email && password.length >= 6) {
       alert("Login successful (demo)");
       localStorage.setItem("userEmail", email);
       loginForm.reset();
@@ -82,50 +55,23 @@ if(loginForm){
   });
 }
 
-const faqItems = document.querySelectorAll(".faq-item h3");
+document.querySelectorAll(".faq-item").forEach(h=> {
+  h.style.cursor ="pointer";
 
-faqItems.forEach(item => {
-  item.style.cursor = "pointer";
-
-  item.addEventListener("click", () => {
-    const p = item.nextElementSibling;
-    p.style.display = p.style.display === "none" ? "block" : "none";
-  });
-});
-
-const sections = document.querySelectorAll(".content-section");
-
-const revealOnScroll = () => {
-  const windowHeight = window.innerHeight;
-
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-
-    if(top < windowHeight - 100){
-      section.style.opacity = "1";
-      section.style.transform = "translateY(0)";
-    }
-  });
-};
-
-window.addEventListener("scroll", revealOnScroll);
-
-document.querySelectorAll(".faq-item h3").forEach(h => {
-  h.style.cursor = "pointer";
-  h.addEventListener("click",() => {
+  h.addEventListener("click", () => {
     const p = h.nextElementSibling;
     if(!p) return;
-    p.style.display = (p.style.display ==="none") ? "block" : "none";
+
+    p.style.display = p.style.display === "none" || p.style.display === "" ? "block" : "none";
   });
 });
-
 
 const contactForm = document.getElementById("contactForm");
 
 if(contactForm){
   const alertBox = document.getElementById("contactError");
 
-  contactForm.addEventListener("submit",(e)=>{
+  contactForm.addEventListener("submit", e =>{
     e.preventDefault();
 
     const name = contactForm.querySelector("input[name='name']");
@@ -136,6 +82,7 @@ if(contactForm){
 
     if(!name.value.trim()) errors.push("Please enter your name.");
     if(!email.value.trim()) errors.push("Please enter your email.");
+
     if(email.value  
       && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
     ){
@@ -144,7 +91,7 @@ if(contactForm){
 
     if(!message.value.trim()) errors.push("Please write a message.");
 
-    if(alertBox) alertBox.textContent = errors.join("");
+    if(alertBox) alertBox.textContent = errors.join(" ");
 
     if(errors.length === 0){
       alert("Message sent successfully! (demo)");
@@ -154,7 +101,22 @@ if(contactForm){
   });
 }
 
+function revealOnScroll(){
+  document,querySelectorAll(".reveal").forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const winHeight = window.innerHeight;
+
+    if(top < winHeight -  100){
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
 const slider = document.querySelector("[data-slider]");
+
 if(slider){
   const cards = Array.from(slider.querySelectorAll(".slide-card"));
   const dotsWrap = slider.querySelector("[data-dots]");
@@ -171,11 +133,36 @@ if(slider){
       const d = document.createElement("button");
       d.type = "button";
       d.className ="dot" + (i === idx ? " active" : "");
+
       d.addEventListener("click", () => {
         idx = i;
         update();
       });
+
       dotsWrap.appendChild(d);
     });
   };
+
+  const update = () => {
+    cards.forEach((card, i) => {
+      card.style.display = i === idx ? "block" : "none";
+    });
+    renderDots();
+  };
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      idx = (idx - 1 + cards.length) % cards.length;
+      update();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      idx = (idx + 1) % cards.length;
+      update();
+    });
+  }
+
+  update();
 }
