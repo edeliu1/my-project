@@ -102,7 +102,7 @@ if(contactForm){
 }
 
 function revealOnScroll(){
-  document,querySelectorAll(".reveal").forEach(el => {
+  document.querySelectorAll(".reveal").forEach(el => {
     const top = el.getBoundingClientRect().top;
     const winHeight = window.innerHeight;
 
