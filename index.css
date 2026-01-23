@@ -198,3 +198,24 @@ body{
     padding: 20px;
     font-size: 14px;
 }
+
+@media (max-width: 768px){
+    .main-header{
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    .main-nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+    .content-section{
+        padding: 60px 20px;
+    }
+}
+@media (max-width: 600px){
+    .service-grid{
+        grid-template-columns: 1fr;
+    }
+}
