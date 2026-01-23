@@ -191,3 +191,10 @@ body{
     box-shadow: 0 10px 25px rgba(29,78,216,0.35);
 }
 
+.main-footer{
+    background: #0a2342;
+    color: #dbeafe;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
