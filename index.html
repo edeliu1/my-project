@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart City - Fushe Kosova</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header class="main-header">
@@ -29,7 +29,7 @@
 
     <section id="hero" class="hero" style="background-image: url('background.img.png');">
         <div class="hero-overlay">
-            <h1>Smart City Web Portal</h1>
+            <h1>Smart City</h1>
             <p>Connecting citizens with municipal services in Fushe Kosova.</p>
             <a href="#services" class="btn-primary">Get Started</a>
         </div>
@@ -88,7 +88,7 @@
     
     <section id="news" class="content-section news-section">   
          <h2>Latest Announcements</h2>
-         <div class="news-grid"></div>
+         <div class="news-grid">
             <div class="news-card">
                 <h3>Road Infratstructure Update</h3>
                 <p>The municipality has started road reconstruction in the central area. Expected completion: March 2025.</p>
@@ -154,7 +154,9 @@
             <input type="email" required>
 
             <label>Message</label>
-            <textarea rows="4" required></textarea>
+            <textarea name="message" rows="4" required></textarea>
+
+            <p id="contactError" class="form-error"></p>
 
             <button type="submit" class="btn-primary">Send</button>
         </form>

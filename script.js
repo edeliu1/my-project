@@ -56,12 +56,14 @@ if (loginForm) {
 }
 
 document.querySelectorAll(".faq-item").forEach(h=> {
-  h.style.cursor ="pointer";
+  item.style.cursor ="pointer";
 
-  h.addEventListener("click", () => {
-    const p = h.nextElementSibling;
-    if(!p) return;
+  const p = item.querySelector("p");
+  if(!p) return;
 
+  p.style.display ="none";
+
+  item.addEventListener("click", () => {
     p.style.display = p.style.display === "none" || p.style.display === "" ? "block" : "none";
   });
 });
