@@ -120,5 +120,15 @@ p a {
 
 p a:hover{
     text-decoration: underline;
-    
+
+}
+
+@media (max-width: 480px){
+    form{
+        padding: 24px 18px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
 }
