@@ -129,3 +129,35 @@ body{
     font-size: 14px;
 
 }
+
+@media(max-width: 268px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+
+    }
+
+    .main ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+
+    }
+
+    .logo img {
+        height: 40px;
+
+    }
+
+    .permbajtja {
+        padding: 40px 20px;
+        text-align: center;
+
+    }
+
+    .permbajtja p {
+        margin: 0 auto;
+    }
+
+}
