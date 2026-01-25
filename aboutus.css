@@ -115,5 +115,17 @@ body{
     line-height: 1.7;
     color: #2b3b57;
     max-width: 900px;
+
+}
+
+.perfundimi{
+    margin-to: 30px;
+
+    background: #0a2342;
+    color: #dbeafe;
+
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
     
 }
