@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(160deg,#f4f7ff 0%,#eef2ff 50%, #ffffff 100%);
+    color: #0a2342;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(135deg,#2563eb,#1e40af);
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.logo-area{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img{
+    height: 50px;
+}
+
+.portal-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-nav ul{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a{
+    text-decoration: none;
+    color: #dbeafe;
+    font-size: 15px;
+    opacity: 0.85;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+    opacity: 1;
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.9);
+}
+
+.hero{
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+    overflow: hidden;
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.15),rgba(0,0,0,0.55));
+}
+
+.hero-overlay{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 760px;
+    padding: 0 30px;
+}
+
+.hero-overlay h1{
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.hero-overlay p{
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    text-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+.btn-primary{
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 999px;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 16px 40px rgba(37,99,235,0.4);
+    transition: 0.25s;
+}
+
+.btn-primary:hover{
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 24px 55px rgba(37,99,235,0.45);
+}
+
+.content-section{
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 80px 40px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.content-section h2{
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.content-section p{
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.service-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card{
+    background: white;
+    border: 1px solid #d7e3ff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: #0a2342;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(10,35,66,0.08);
+    transition: 0.3s;
+}
+
+.service-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(10,35,66,0.14);
+    border-color: #1d4ed8;
+}
+
+.icon-circle{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #1d4ed8;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(29,78,216,0.35);
+}
+
+.main-footer{
+    background: #0a2342;
+    color: #dbeafe;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px){
+    .main-header{
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    .main-nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+    .content-section{
+        padding: 60px 20px;
+    }
+}
+@media (max-width: 600px){
+    .service-grid{
+        grid-template-columns: 1fr;
+    }
+}
