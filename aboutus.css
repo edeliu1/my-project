@@ -56,3 +56,30 @@ body{
     font-weight: 800;
     letter-spacing: 0.2px;
 }
+
+.main ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+
+}
+
+.main a {
+    text-decoration: none;
+    color: #dbeafe;
+    font-size: 15px;
+    opacity: 0.85;
+
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+
+}
+
+.main a:hover,
+.main a.active {
+    opacity: 1;
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.9);
+
+}
