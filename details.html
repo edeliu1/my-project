@@ -7,58 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="content-section">
-        <h2 id="service-title"> Loading... </h2>
-        <p id="service-description"></p>
-    </section>
-
-<script>
-const params = new URLSearchParams(window.location.search);
-const service = params.get("service");
-
-const data = {
-health: {
-title: "Healthcare Services",
-description: "Acess health centers,appointments,vaccination information and medical assistance."
-},
-education : {
-title:"Education Services",
-description:"Find information about schools,registrations,digital platforms and student support."
-},
-
-admin: {
-title :"Municipal Administration",
-description: "Submit municipal requests,documents,certificates and administrative services."
-},
-
-transport:{
-title :"Transportation Services",
-description:"Bus lines,train schedules,ticket costs and transportation updates",
-},
-
-documents:{
-title:"Document",
-description:"Apply online for certificates,personal documents and official forms",
-},
-
-requests:{
-title:"Online requests",
-description:"Submit complaints,digital forms and service reports online",
-}
-};
-
-if(data[service]) {
-document.getElementById("service-title").textContent=data[service].title;
-document.getElementById("service-description").textContent=data[service].description;
-}
-else
-{
-    document.getElementById("service-title").textContent="Service not found";
-    document.getElementById("service-description").textContent="The selected service does not exist";
-}
-
-</script>
-
+    
 </body>
 </html>
 
