@@ -33,3 +33,20 @@ box-shadow: 0 20px 45px rgba(0,0,0,0.010);
 text-align: left;
 
 }
+
+
+.details-card h2 {
+font-size: 34px;
+font-weight: 900;
+margin-bottom: 14px;
+line-height: 1.1;
+
+
+}
+
+.details-card p {
+font-size: 17px;
+line-height: 1.7;
+color: #2b3b57;
+
+}
