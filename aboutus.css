@@ -118,8 +118,8 @@ body{
 
 }
 
-.perfundimi{
-    margin-to: 30px;
+.perfundimi {
+    margin-top: 30px;
 
     background: #0a2342;
     color: #dbeafe;
@@ -127,5 +127,5 @@ body{
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    
+
 }
