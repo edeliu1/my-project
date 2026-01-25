@@ -50,3 +50,9 @@ body{
     height: 50px;
     width: auto;
 }
+
+.emri-portalit {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
