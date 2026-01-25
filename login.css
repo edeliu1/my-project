@@ -103,3 +103,22 @@ button:hover {
     box-shadow: 0 24px 55px rgba(37,99,235,0.45);
 
 }
+
+p {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 14px;
+
+}
+
+p a {
+    color: #1d4ed8;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+p a:hover{
+    text-decoration: underline;
+    
+}
