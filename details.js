@@ -34,5 +34,21 @@ documents: {
 
 
 
+const titleEl = document.getElementById("service-title");
+const descEl = document.getElementById("service-description");
+
+if(data[service]) {
+titleEl.textContent = data[service].title;
+descEl.textContent = data[service].descrption;
 
 
+} 
+else 
+    {
+  titleEl.textContent = "Service not found";
+descEl.textContent = "The selected service does not exist";
+else
+
+
+
+}
