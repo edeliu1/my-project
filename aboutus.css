@@ -83,3 +83,37 @@ body{
     border-bottom: 2px solid rgba(255,255,255,0.9);
 
 }
+
+.permbajtja{
+    max-width: 1200px;
+    margin: 26px auto;
+    padding: 55px 40px;
+
+    background: rgba(255,255,255,0.95);
+    border-radius: 22px;
+
+    text-align: left;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(10,35,66,0.06);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+}
+
+.permbajtja h2 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: #0a2342;
+
+}
+
+.permbajtja p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #2b3b57;
+    max-width: 900px;
+    
+}
