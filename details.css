@@ -11,7 +11,25 @@ align-items: center;
 justify-content: center;
 background: linear-gradient(160deg,#f4f7ff 0%,#eeff2ff 50%,#ffffff 100%);
 color: #0a2342;
+}
 
+.details-wrap {
+width: 100%;
+padding: 30px 20px;
+display: flex;
+justify-content: center;
 
+}
+.details-card {
+width: 100%;
+max-width: 720px;
+
+background: rgba(255,255,255,0.95);
+border-radius: 22px;
+padding: 36px 28px;
+
+border: 1px solid rgba(10,35,66,0.06);
+box-shadow: 0 20px 45px rgba(0,0,0,0.010);
+text-align: left;
 
 }
