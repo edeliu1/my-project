@@ -12,3 +12,23 @@ const reveal = () => {
     });
 
 };
+
+Selections.forEach((sec) => sec.classList.add("reveal"));
+
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
+
+const links = document.querySelectorAll(".main a");
+
+const setActive =()=> {
+    const winH = window.innerHeight;
+    let current = null;
+
+    sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if(rect.top<=winH*0.35 &&rect.bottom >=winH*0.35) {
+            current=sec;
+        }
+    });
+
+ }
