@@ -177,3 +177,13 @@ color: #374151;
 line-height: 1.6;
 
 }
+
+.main-footer {
+margin-top: 40px;
+background: #0a2342;
+color: #dbeafe;
+text-align: center;
+padding: 20px;
+font-size: 14px;
+
+}
