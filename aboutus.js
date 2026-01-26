@@ -40,3 +40,6 @@ const setActive =()=> {
     if(aboutLink)aboutLink.classList.add("active");
   }
 };  
+
+window.addEventListener("scroll", setActive);
+window.addEventListener("load",setActive);
