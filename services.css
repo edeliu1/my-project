@@ -89,3 +89,32 @@ border-bottom: 2px solid rgba(255,255,255,0.9);
 
 
 }
+
+.services-section {
+max-width: 1200px;
+margin: 50px auto;
+padding: 40px 40px;
+
+
+
+}
+
+.services-header {
+
+    margin-bottom: 30px;
+}
+
+.services-header h1 {
+font-size: 48px;
+font-weight: 900;
+margin-bottom: 10px;
+
+
+
+}
+
+.services-header p {
+    font-size: 18px;
+    color: #3b4a6b;
+    max-width: 600px;
+}
