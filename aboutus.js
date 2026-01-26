@@ -10,5 +10,5 @@ const reveal = () => {
             sec.classList.add("show");
         }
     });
-    
-}
+
+};
