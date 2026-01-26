@@ -31,4 +31,12 @@ const setActive =()=> {
         }
     });
 
- }
+ links.forEach((a) =>a.classList.remove("active"));
+
+ if(current) {
+    const title = current.quarySelector("h2")?.textContent?.toLowerCase() ||"";
+
+    const aboutLink = Array.from(links).find((a) => a.getAttribute("href")?.includes("about.html"));
+    if(aboutLink)aboutLink.classList.add("active");
+  }
+};  
