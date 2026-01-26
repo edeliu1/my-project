@@ -187,3 +187,30 @@ padding: 20px;
 font-size: 14px;
 
 }
+
+@media (max-width: 900px) {
+.kartat {
+grid-template-columns: repeat(2,1fr);
+
+}
+
+
+}
+
+@media (max-width:600px) {
+
+    .services-section {
+padding: 30px 20px;
+
+    }
+
+    .kartat {
+grid-template-columns: 1fr;
+
+
+    }
+
+    .services-header h1 {
+        font-size: 34px;
+    }
+}
