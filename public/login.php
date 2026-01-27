@@ -30,3 +30,19 @@ $error = 'Ploteso email dhe password!';
 
 
 }
+
+if ($user && password_verify($password,$user['password_hash'])){
+$_SESSION['user'] = [
+'id' => (int)$user['id'],
+'name' => $user['name'],
+'email' => $user['email'],
+'role' => $user['role']
+
+
+];
+
+
+
+
+
+}
