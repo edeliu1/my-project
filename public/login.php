@@ -8,11 +8,11 @@ $db = new Database($config);
 
 $error = '';
 
-if ($_SERVER['REQUEST_METHOD'] ==='POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email = trim($_POST['email'] ?? ''); 
     $password = $_POST['password'] ?? '';
 
-    if($email === '' || $passwrod === '') {
+    if($email === '' || $password === '') {
         $error = 'Ploteso email dhe password!';
     } else {
         $stmt = $db->getPdo()->prepare("SELECT id,name,email,password_hash, role FROM users WHERE email =? LIMIT 1");
@@ -27,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] ==='POST'){
                 'role' => $user['role']
             ];
 
-            if ($user['role'] === 'admin'){
+            if (strtolower((string)$user['role']) === 'admin'){
                 header("Location:/my-project/public/dashboard.php");
                 exit;
             }
-            header("Location:/my-project/public/index.html");
+            header("Location:/my-project/public/index.php");
             exit;
         } else {
             $error = 'Email ose password eshte gabimi!';

@@ -1,3 +1,8 @@
+<?php
+session_start();
+$user = $_SESSION['user'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +20,11 @@
 
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>                        
-                <li><a href="about.html">About us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="index.php" class="active">Home</a></li>                        
+                <li><a href="about.php">About us</a></li>
+                <li><a href="services.php">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.php">Login</a></li>
 
             </ul> 
         </nav>
@@ -31,7 +36,7 @@
         <div class="hero-overlay">
             <h1>Smart City</h1>
             <p>Connecting citizens with municipal services in Fushe Kosova.</p>
-            <a href="services.html" class="btn-primary">Get Started</a>
+            <a href="services.php" class="btn-primary">Get Started</a>
         </div>
     </section>
 
@@ -166,19 +171,19 @@
 <section id="login" class="content-section login-section">
         <h2>Login</h2>
 
-        <form id="loginForm" class="login-form">
+        <form method="post" action="login.php" class="login-form">
 
             <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
 
             <label>Password</label>
-            <input type="password" placeholder="Enter your password" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
 
             <button type="submit" class="btn-primary">Login</button>
 
             <p class="small-text">
                 Don't have an account?.
-                <a href="#register">Register</a>
+                <a href="register.php">Register</a>
             </p>
 
         </form>

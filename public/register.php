@@ -7,7 +7,7 @@ $db = new Database($config);
 
 $error = '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     } else{
         $stmt = $db->getPdo()->prepare("SELECT id FROM users WHERE email = ? LIMIT 1");
         $stmt->execute([$email]);
-        $exists = $stmt->fetch();
+        $exists = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if($exists){
             $error = "Kjo email ekziston! Provo login.";
@@ -37,13 +37,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-include __DIR__ . '/register.html';
-
-if($error !== ''){
-    echo "<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        var er = document.getElementById('error');
-        if(er) er.innerText = " . json_encode($error) . ";
-    })
-    </script>";
-}
+include __DIR__ . '/register.view.php';

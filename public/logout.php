@@ -12,6 +12,8 @@ if(ini_get("session.use-cookies")){
 }
 
 session_destroy();
+session_regenerate_id(true);
 
-header("Location: login.php");
+
+header("Location: index.php");
 exit;

@@ -8,8 +8,11 @@
 <body>
     <h2>Register</h2>
 
-    <div id="error" style="color:red"></div>
-    <div id="succes" style="color:green"></div>
+    <?php if(!empty($error)) : ?>
+        <div id="error" style="color:red">
+            <?php echo htmlspecialchars($error); ?>
+        </div>
+    <?php endif; ?>
 
     <form method="post" action="register.php">
         <label>Name</label><br>
