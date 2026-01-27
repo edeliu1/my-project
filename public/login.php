@@ -25,12 +25,6 @@ $error = 'Ploteso email dhe password!';
 
 
 
-}
-
-
-
-}
-
 if ($user && password_verify($password,$user['password_hash'])){
 $_SESSION['user'] = [
 'id' => (int)$user['id'],
@@ -45,4 +39,26 @@ $_SESSION['user'] = [
 
 
 
+
+
+
+if ($user['role'] === 'admin'){
+header("Location:/my-project/public/dashboard.php");
+exit;
+
 }
+
+
+header("Location:/my-project/public/index.html");
+exit;
+} else {
+$error = 'Email ose password eshte gabimi!';
+
+
+
+
+}
+}
+}
+
+incluse_DIR_.'/login.html';
