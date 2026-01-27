@@ -8,9 +8,13 @@
 <body>
     <h2>Login</h2>
 
-    <div id="error" style="color:red"></div>
+    <?php if (!empty($error)) : ?>
+        <div id="error">
+            <?php echo htmlspecialchars($error); ?>
+        </div>
+    <?php endif; ?>
 
-    <from method="post" action="login.php">
+    <form method="post" action="login.php">
         <label>Email</label><br>
         <input type="email" name="email" required><br><br>
 
@@ -18,9 +22,8 @@
         <input type="password" name="password" required><br><br>
 
         <button type="submit">Login</button>
-    </from>
+    </form>
 
     <p>S'ke llogari? <a href="register.php">Register</a></p>
-    
 </body>
 </html>
