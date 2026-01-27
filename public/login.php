@@ -13,8 +13,19 @@ $email = trim ( $_POST['email']??");
 
 $password = $_POST['password'] ??";
 
+if($email === " || $passwrod === ") {
+$error = 'Ploteso email dhe password!';
 
 
+
+} else {
+ $stmt = $db->getPdo()->prepare("SELECT id,name,email,password_hash,role FROm users WHERE email =? LIMIT 1");
+ $stmt->execute([$email]);
+ $user = $stmt->fetch();
+
+
+
+}
 
 
 
