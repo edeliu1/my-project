@@ -36,5 +36,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
     }
 }
+?>
 
-include __DIR__ . '/register.view.php';
+<div class="hyrja-wrapper">
+    <h2>Register</h2>
+
+    <?php if (!empty($error)) : ?>
+        <div id="gabim"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
+
+    <form method="post" action="register.php">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Create account</button>
+
+        <p>Ke llogari? <a href="login.php">Login</a></p>
+    </form>
+</div>

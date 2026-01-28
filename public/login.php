@@ -27,16 +27,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 'role' => $user['role']
             ];
 
+            $base = '/my-project/public/';
+            
             if (strtolower((string)$user['role']) === 'admin'){
-                header("Location:/my-project/public/dashboard.php");
+                header("Location: dashboard.php");
                 exit;
             }
-            header("Location:/my-project/public/index.php");
+            header("Location: index.php");
             exit;
         } else {
             $error = 'Email ose password eshte gabimi!';
         }
     }
 }
+?>
 
-include __DIR__ . '/login.view.php';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="hyrja-wrapper">
+    <h2>Login</h2>
+
+    <?php if (!empty($error)) : ?>
+        <div id="gabim"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
+
+    <form method="post" action="login.php">
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+
+        <p>S'ke llogari? <a href="register.php">Register</a></p>
+    </form>
+</div>
+
+</body>
+</html>

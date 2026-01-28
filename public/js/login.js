@@ -1,35 +1,14 @@
-const form = document.querySelector("form");
-const errorBox = document.getElementById("error");
+document.addEventListener("DOMContentLoaded", () => {
+    const kutia = document.querySelector(".hyrja-wrapper");
 
-form.addEventListener("submit",function (e) {
-    e.preventDefault()
+    if (kutia) {
+        kutia.style.opacity = "0";
+        kutia.style.transform = "translateY(20px)";
+        kutia.style.transition = "0.6s ease";
 
-    const email =
-    form.querySelector("input[name='email']").value.trim();
-
-    const password =
-    form.querySelector("input[name='password']").value.trim();
-
-    errorBox.textContent="";
-    
-    if(!email || !password) {
-        errorBox.textContent = "Please fill in all fields.";
-        return;
+        requestAnimationFrame(() => {
+            kutia.style.opacity = "1";
+            kutia.style.transform = "translateY(0)";
+        });
     }
-
-    if (!email.includes("@")) {
-        errorBox.textContent = "Invalid email format.";
-        return;
-        
-    }
-
-    if (password.length<6) {
-        errorBox.textContent= "Invalid email format.";
-        return;
-        
-    }
-
-    localStorage.setItem("userEmail", email);
-    alert("Login successful (demo)");
-    form.reset();
 });
