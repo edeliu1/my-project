@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(160deg, #f4f7ff 0%, #eef2ff 50%, #ffffff 100%);
+    color: #0a2342;
+}
+
+.permbajtja-admin{
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+.shiriti-navigimit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lidhjet a{
+    margin-left: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.njoftim{
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.njoftim.gabim{
+    background: rgba(220,38,38,0.08);
+    border: 1px solid rgba(220,38,38,0.25);
+    color: #b91c1c;
+}
+
+.njoftim.sukses{
+    background: rgba(220,38,38,0.08);
+    border: 1px solid rgba(34,197,94,0.25);
+    color: #166534;
+}
+
+.kartela{
+    background: rgba(255,255,255,0.96);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(10,35,66,0.06);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+label{
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 800;
+}
+
+input,
+textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px sold #bcd0ff;
+    outline: none;
+}
+
+input:focus,
+textarea:focus{
+    border-color: #1d4ed8;
+}
+
+.button{
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #e8f0ff;
+    color: #1d4ed8;
+    font-weight: 800;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button.rrezik{
+    background: #ffe8e8;
+    color: #b91c1c;
+}
+
+button[type="submit"]{
+    margin-top: 14px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
+
+.tabela-admin{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-admin th,
+.tabela-admin td{
+    padding: 10px;
+    border-bottom: 1px solid #e6eeff;
+    text-align: left;
+}
+
+.veprimet{
+    white-space: nowrap;
+}
+
+@media (max-width: 900px){
+    .permbajtja-admin{
+        padding: 0 14px;
+    }
+    .kartela{
+        padding: 16px;
+    }
+}
+
+@media (max-width: 600px){
+    .shiriti-navigimit{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .lidhjet a{
+        margin-left: 0;
+        margin-right: 12px;
+    }
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    input, textarea{
+        padding: 11px;
+    }
+    button[type="submit"]{
+        width: 100%;
+    }
+    .veprimet{
+        white-space: normal;
+    }
+    .tabela-admin{
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .tabela-admin th,
+    .tabela-admin td{
+        min-width: 120px;
+    }
+    .button{
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+}
