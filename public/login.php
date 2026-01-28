@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             $base = '/my-project/public/';
             
             if (strtolower((string)$user['role']) === 'admin'){
-                header("Location: dashboard.php");
+                header("Location: " . $base . "admin/dashboard.php");
                 exit;
             }
             header("Location: index.php");
