@@ -22,7 +22,9 @@ $user= $_SESSION['user'] ?? null;
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About us</a></li>
+        <li><a href="services.php">services</a></li>
+        <li><a href="contact.php"class="active">Contact</a></li>
         <li><a href="login.php">Login</a></li>
-</ul>
-</nav>
+  </ul>
+ </nav>
 </header>
