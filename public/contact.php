@@ -12,42 +12,49 @@ $user= $_SESSION['user'] ?? null;
 </head>
 <body>  
 
-<header class="main-header">
-    <div class="logo-area">
-        <img src="images/logo.fk.png" alt="Fushe Kosova Logo">
-        <span class="portal-name">Fushe Kosova</span>
-</div>
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="images/logo.fk.png" alt="Fushe Kosova Logo">
+            <span class="portal-name">Fushe Kosova</span>
+        </div>
 
-<nav class="main-nav">
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About us</a></li>
-        <li><a href="services.php">services</a></li>
-        <li><a href="contact.php"class="active">Contact</a></li>
-        <li><a href="login.php">Login</a></li>
-  </ul>
- </nav>
-</header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About us</a></li>
+                <li><a href="services.php">services</a></li>
+                <li><a href="contact.php" class="active">Contact</a></li>
+                <li><a href="login.php">Login</a></li>
 
-<section id="contact" class="content-section">
-    <h2>Contact</h2>
-    <p>For any issues, suggestions or support, you can contact the municipal administration</p>
+                <?php if($user): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li><a href="login.php">Login</a></li>
+                        <?php endif; ?>
+                        </ul>
+                    </nav>
+                </header>
 
-    <form id="contactForm" class="contact-form">
-        <label>Name</label>
-        <input type="text" name="name" required>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+    <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>For any issues, suggestions or support, you can contact the municipal administration</p>
 
-        <label>Message<label>
-            <textarea name="message" rows="4" required></textarea>
+        <form id="contactForm" class="contact-form">
+            <label>Name</label>
+            <input id="name" type="text" name="name" required>
+
+            <label>Email</label>
+            <input id="email" type="email" name="email" required>
+
+            <label>Message</label>
+            <textarea id"message" name="message" rows="4" required></textarea>
 
             <p id="contactError" class="form-error"></p>
 
             <button type="submit" class="btn-primary">Send</button>
-</form>
-</section>
+        </form>
+    </section>
 
 <footer class="main-footer">
     <p>@ 2025 Smart City Web Portal - Fushe Kosova</p>

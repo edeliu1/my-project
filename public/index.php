@@ -168,7 +168,7 @@ $user = $_SESSION['user'] ?? null;
     </section>
 
 
-<section id="login" class="content-section login-section">
+    <section id="login" class="content-section login-section">
         <h2>Login</h2>
 
         <form method="post" action="login.php" class="login-form">
