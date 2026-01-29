@@ -15,5 +15,6 @@ $user= $_SESSION['user'] ?? null;
 <header class="main-header">
     <div class="logo-area">
         <img src="images/logo.fk.png" alt="Fushe Kosova Logo">
-        <span src="portal-name">Fushe Kosova</span>
+        <span class="portal-name">Fushe Kosova</span>
 </div>
+
