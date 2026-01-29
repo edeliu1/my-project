@@ -53,3 +53,6 @@ $user= $_SESSION['user'] ?? null;
     <p>@ 2025 Smart City Web Portal - Fushe Kosova</p>
 </footer>
 
+<script src="js/index.js"></script>
+</body>
+</html>
