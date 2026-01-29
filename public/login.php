@@ -33,10 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 header("Location: " . $base . "admin/dashboard.php");
                 exit;
             }
-            header("Location: index.php");
-            exit;
         } else {
-            $error = 'Email ose password eshte gabimi!';
+            header("Location: " . $base . "users/dashboard.php");        
         }
     }
 }
