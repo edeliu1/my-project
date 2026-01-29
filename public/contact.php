@@ -48,3 +48,8 @@ $user= $_SESSION['user'] ?? null;
             <button type="submit" class="btn-primary">Send</button>
 </form>
 </section>
+
+<footer class="main-footer">
+    <p>@ 2025 Smart City Web Portal - Fushe Kosova</p>
+</footer>
+
