@@ -22,9 +22,9 @@ $user = $_SESSION['user'] ?? null;
         <nav class="main-nav">
             <ul>
                 <li><a href="index.php">Home</a></li>                        
-                <li><a href="index.php#about">About us</a></li>
+                <li><a href="about.php">About us</a></li>
                 <li><a href="services.php" class="active">Services</a></li>
-                <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 
                 <?php if ($user): ?>
                     <?php if(strtolower((string)$user['role']) === 'admin'): ?>

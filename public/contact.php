@@ -22,9 +22,8 @@ $user= $_SESSION['user'] ?? null;
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">About us</a></li>
-                <li><a href="services.php">services</a></li>
+                <li><a href="services.php">Services</a></li>
                 <li><a href="contact.php" class="active">Contact</a></li>
-                <li><a href="login.php">Login</a></li>
 
                 <?php if($user): ?>
                     <li><a href="logout.php">Logout</a></li>

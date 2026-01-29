@@ -24,31 +24,33 @@ $user = $_SESSION['user'];
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <h2>Admin Dashboard</h2>
-    
-    <p>Welcome, 
-    <?php echo htmlspecialchars($user['name']); ?>
-    (<?php echo htmlspecialchars($user['email']); ?>)
-    <span class="badge">ADMIN</span>
-    </p>
+    <div class="karta">
+        <h2>Admin Dashboard</h2>
+        
+        <p>Welcome, 
+        <?php echo htmlspecialchars($user['name']); ?>
+        (<?php echo htmlspecialchars($user['email']); ?>)
+        <span class="badge">ADMIN</span>
+        </p>
+    </div>
 
     <ul class="menu">
         <li>
             <a href="news_admin.php">
                 <span class="icon">📰</span>
-                Manage News
+                <span>Manage News</span>
             </a>
         </li>
         <li>
             <a href="products_admin.php">
                 <span class="icon">📦</span>
-                Manage Products
+                <span>Manage Products</span>
             </a>
         </li>
         <li>
             <a href="messages_admin.php">
                 <span class="icon">✉️</span>
-                Contact Messages
+                <span>Contact Messages</span>
             </a>
         </li>
     </ul>
