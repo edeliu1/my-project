@@ -215,7 +215,7 @@ text-align: left;
 
 .contact-form input,
 .contact-form textarea,
-.login-fofrm input{
+.login-form input{
 width: 100%;
 padding: 12px 14px;
 border-radius: 12px;
@@ -225,10 +225,17 @@ font-size: 15px;
 background: white;
 transition: 0.2s;
 
+}
 
-
+.contact-form input:foccus,
+.contact-form textarea:focus,
+.login-form input:focus{
+border-color: #1d4ed8;
+box-shadow: 0 0 0 4px rgba(29,78,216,0.15);
 
 }
+
+
 
 
 
