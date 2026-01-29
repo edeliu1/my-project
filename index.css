@@ -240,7 +240,32 @@ box-shadow: 0 0 0 4px rgba(29,78,216,0.15);
     min-height: 120px;
 }
 
+.contact-form .btn-primary,
+.login-form . .btn-primary{
+width: fit-content;
+justify-self: center;
+margin-top: 6px;
 
+
+}
+
+.login-form .small-text{
+text-align: center;
+margin-top: 8px;
+color: #0a2342;
+opacity: 0.9;
+
+
+}
+
+.form-error{
+color: #b91c1c;
+font-weight: 600;
+min-height: 18px;
+
+
+
+}
 
 
 
