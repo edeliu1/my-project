@@ -1,25 +1,30 @@
+<?php
+session_start();
+$user = $_SESSION['user'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart City - Fushe Kosova</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header class="main-header">
         <div class="logo-area">
-            <img src="logo.fk.png" alt="Fushe Kosova Logo">
+            <img src="images/logo.fk.png" alt="Fushe Kosova Logo">
             <span class="portal-name">Fushe Kosova</span>
         </div>
 
         <nav class="main-nav">
             <ul>
-                <li><a href="#hero" class="active">Home</a></li>                        
-                <li><a href="about.html">About us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="index.php" class="active">Home</a></li>                        
+                <li><a href="about.php">About us</a></li>
+                <li><a href="services.php">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.php">Login</a></li>
 
             </ul> 
         </nav>
@@ -27,11 +32,11 @@
 
     </header>
 
-    <section id="hero" class="hero" style="background-image: url('background.img.png');">
+    <section id="hero" class="hero" style="background-image: url('images/background.img.png');">
         <div class="hero-overlay">
             <h1>Smart City</h1>
             <p>Connecting citizens with municipal services in Fushe Kosova.</p>
-            <a href="#services" class="btn-primary">Get Started</a>
+            <a href="services.php" class="btn-primary">Get Started</a>
         </div>
     </section>
 
@@ -103,7 +108,7 @@
                 <h3>Train Schedules Changes</h3>
                 <p>Update Train schedules for Prishtina-Fushe Kosova route starting next week.</p>
             </div>
-        </div  >
+        </div>
     </section>
     <section  id="statistics" class="content-section stats-section">
         <h2>City statistics</h2>
@@ -148,10 +153,10 @@
         <form id="contactForm" class="contact-form">
 
             <label>Name</label>
-            <input type="text" required>
+            <input type="text" name="name" required>
             
             <label>Email</label>
-            <input type="email" required>
+            <input type="email" name="email" required>
 
             <label>Message</label>
             <textarea name="message" rows="4" required></textarea>
@@ -166,19 +171,19 @@
 <section id="login" class="content-section login-section">
         <h2>Login</h2>
 
-        <form id="loginForm" class="login-form">
+        <form method="post" action="login.php" class="login-form">
 
             <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
 
             <label>Password</label>
-            <input type="password" placeholder="Enter your password" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
 
             <button type="submit" class="btn-primary">Login</button>
 
             <p class="small-text">
                 Don't have an account?.
-                <a href="#register">Register</a>
+                <a href="register.php">Register</a>
             </p>
 
         </form>
@@ -212,7 +217,7 @@
         <p>© 2025 Smart City Web Portal - Fushe Kosova</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 </html>

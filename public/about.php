@@ -1,25 +1,29 @@
+<?php
+session_start();
+$user = $_SESSION['user'] ?? null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us – Smart City Fushe Kosova</title>
-    <link rel="stylesheet" href="aboutus.css">
+    <link rel="stylesheet" href="css/aboutus.css">
 </head>
 <body>
     <header class="main-header">
         <div class="logo">
-            <img src="logo.fk.png" alt="Fushe Kosova Logo">
+            <img src="images/logo.fk.png" alt="Fushe Kosova Logo">
             <span class="emri-portalit">Fushe Kosova</span>
         </div>
 
         <nav class="main">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="about.html" class="active">About us</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.php">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.php">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -44,5 +48,5 @@
     <footer class="perfundimi">
         <p>© 2025 Smart City Web Portal - Fushe Kosova</p>
     </footer>
-    <script src="aboutus.js"></script>
+    <script src="js/aboutus.js"></script>
 </body>

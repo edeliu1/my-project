@@ -1,17 +1,14 @@
 <?php
 
 session_start();
-echo "<pre>"; print_r($_SESSION); echo "</pre>";
-exit;
-
 
 if(!isset($_SESSION['user'])){
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 
-if(($_SESSION['user']['role'] ?? '') !=='admin'){
-    header("Location: index.php");
+if(strtolower((string)($_SESSION['user']['role'] ?? '')) !=='admin'){
+    header("Location: ../index.php");
     exit;
 }
 
@@ -39,6 +36,6 @@ $user = $_SESSION['user'];
         <li><a href="messages_admin.php">Contact Messages</a></li>
     </ul>
 
-    <p><a href="logout.php">Logout</a></p>
+    <p><a href="../logout.php">Logout</a></p>
 </body>
 </html>
