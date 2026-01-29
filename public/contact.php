@@ -42,3 +42,9 @@ $user= $_SESSION['user'] ?? null;
 
         <label>Message<label>
             <textarea name="message" rows="4" required></textarea>
+
+            <p id="contactError" class="form-error"></p>
+
+            <button type="submit" class="btn-primary">Send</button>
+</form>
+</section>
