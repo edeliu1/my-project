@@ -18,3 +18,11 @@ $user= $_SESSION['user'] ?? null;
         <span class="portal-name">Fushe Kosova</span>
 </div>
 
+<nav class="main-nav">
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About us</a></li>
+        <li><a href="login.php">Login</a></li>
+</ul>
+</nav>
+</header>
