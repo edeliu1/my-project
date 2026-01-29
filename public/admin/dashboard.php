@@ -20,6 +20,7 @@ $user = $_SESSION['user'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../admin/dashboard.css">
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -28,14 +29,32 @@ $user = $_SESSION['user'];
     <p>Welcome, 
     <?php echo htmlspecialchars($user['name']); ?>
     (<?php echo htmlspecialchars($user['email']); ?>)
+    <span class="badge">ADMIN</span>
     </p>
 
-    <ul>
-        <li><a href="news_admin.php">Manage News</a></li>
-        <li><a href="products_admin.php">Manage Products</a></li>
-        <li><a href="messages_admin.php">Contact Messages</a></li>
+    <ul class="menu">
+        <li>
+            <a href="news_admin.php">
+                <span class="icon">📰</span>
+                Manage News
+            </a>
+        </li>
+        <li>
+            <a href="products_admin.php">
+                <span class="icon">📦</span>
+                Manage Products
+            </a>
+        </li>
+        <li>
+            <a href="messages_admin.php">
+                <span class="icon">✉️</span>
+                Contact Messages
+            </a>
+        </li>
     </ul>
 
-    <p><a href="../logout.php">Logout</a></p>
+    <div class="actions">
+        <a class="logout" href="../logout.php">Logout</a>
+    </div>
 </body>
 </html>
