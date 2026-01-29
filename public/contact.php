@@ -28,3 +28,6 @@ $user= $_SESSION['user'] ?? null;
   </ul>
  </nav>
 </header>
+
+<section id="contact" class="content-section">
+    <h2>Contact</h2>
