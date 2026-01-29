@@ -200,7 +200,7 @@ body{
 }
 
 .contact-form,
-.login-fofrm{
+.login-form{
 max-width: 720px;
 margin: 28px auto 0;
 padding: 26px;
@@ -227,7 +227,7 @@ transition: 0.2s;
 
 }
 
-.contact-form input:foccus,
+.contact-form input:focus,
 .contact-form textarea:focus,
 .login-form input:focus{
 border-color: #1d4ed8;
@@ -241,7 +241,7 @@ box-shadow: 0 0 0 4px rgba(29,78,216,0.15);
 }
 
 .contact-form .btn-primary,
-.login-form . .btn-primary{
+.login-form .btn-primary{
 width: fit-content;
 justify-self: center;
 margin-top: 6px;
@@ -266,13 +266,6 @@ min-height: 18px;
 
 
 }
-
-
-
-
-
-
-
 
 
 @media (max-width: 768px){
