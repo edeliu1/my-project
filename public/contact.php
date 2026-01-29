@@ -32,3 +32,13 @@ $user= $_SESSION['user'] ?? null;
 <section id="contact" class="content-section">
     <h2>Contact</h2>
     <p>For any issues, suggestions or support, you can contact the municipal administration</p>
+
+    <form id="contactForm" class="contact-form">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Message<label>
+            <textarea name="message" rows="4" required></textarea>
