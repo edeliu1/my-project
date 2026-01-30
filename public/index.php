@@ -48,27 +48,32 @@ $user = $_SESSION['user'] ?? null;
     <section id="services" class="content-section services-section">
         <h2>Our Services</h2>
         <div class="service-grid">
-            <a href="details.html?service=health" class="service-card">
+            <a href="services/healthcare.php" class="service-card">
                 <span class="icon-circle">🏥</span>
                 <h3>Healthcare</h3>
             </a>
-            <a href="details.html?service=education" class="service-card">
+
+            <a href="services/education.php" class="service-card">
                 <span class="icon-circle">🎓</span>
                 <h3>Education</h3>
             </a>
-            <a href="details.html?service=admin" class="service-card">
+
+            <a href="services/municipal.php" class="service-card">
                 <span class="icon-circle">🏛️</span>
                 <h3>Municipal Administration</h3>
             </a>
-            <a href="details.html?service=transport" class="service-card">
+
+            <a href="services/transport.php" class="service-card">
                 <span class="icon-circle">🚆</span>
                 <h3>Transport</h3>
             </a>
-            <a href="details.html?service=documents" class="service-card">
+
+            <a href="services/documents.php" class="service-card">
                 <span class="icon-circle">📄</span>
                 <h3>Documents</h3>
             </a>
-            <a href="details.html?service=requests" class="service-card">
+
+            <a href="services/requests.php" class="service-card">
                 <span class="icon-circle">✔️</span>
                 <h3>Online Requests</h3>
             </a>

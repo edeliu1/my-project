@@ -3,7 +3,7 @@ session_start();
 
 $_SESSION =[];
 
-if(ini_get("session.use-cookies")){
+if(ini_get("session.use_cookies")){
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
         $params["path"], $params["domain"],
@@ -12,8 +12,7 @@ if(ini_get("session.use-cookies")){
 }
 
 session_destroy();
-session_regenerate_id(true);
 
 
-header("Location: index.php");
+header("Location: login.php");
 exit;

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if($email === '' || $password === '') {
         $error = 'Ploteso email dhe password!';
-    } else {
+    } else{
         $stmt = $db->getPdo()->prepare("SELECT id,name,email,password_hash, role FROM users WHERE email =? LIMIT 1");
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -32,9 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             if (strtolower((string)$user['role']) === 'admin'){
                 header("Location: " . $base . "admin/dashboard.php");
                 exit;
+            } else{
+                header("Location: " . $base . "users/dashboard.php");        
             }
-        } else {
-            header("Location: " . $base . "users/dashboard.php");        
+        } else{
+            $error = 'Email or password is incorrect!';
         }
     }
 }

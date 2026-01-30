@@ -3,7 +3,7 @@ require __DIR__ . '/_guard.php';
 require __DIR__ . '/_db.php';
 require __DIR__ . '/_csrf.php';
 
-$error ='';
+$error = '';
 $success = '';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){

@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-require_once _DIR_ . '/../admin/_db.php';
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: 0");
 
 if (isset($_SESSION['user'])) {
         header("Location: ../login.php");
@@ -10,20 +13,23 @@ if (isset($_SESSION['user'])) {
 
 $user = $_SESSION['user'];
 
-if (($user['role'] ?? '') === 'admin') {
+if (strtolower((string)($user['role'] ?? '')) === 'admin') {
         header("Location: ../admin/dashboard.php");
         exit;
 }
-        ?>
-        <DOCTYPE html>
-         <html lang="en">
-            <head>
-   <meta charset="UTF-8">
-     <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-     <title>User Dashboard</title>
 
-     <link rel="stylesheet" href="../admin/dashboard.css">
+if (strtolower((string)($user['role'] ?? '')) !== 'user') {
+    header("Location: ../index.php");
+    exit;
+}
+?>
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../admin/dashboard.css">
 </head>
 <body>
     <div class="page">
@@ -47,7 +53,7 @@ if (($user['role'] ?? '') === 'admin') {
         <li>
  <a href="../logout.php">
      <span class="icon">🚪</span>
-     logout            </a>
+     Logout            </a>
 </li>
 </ul>
 </div>
