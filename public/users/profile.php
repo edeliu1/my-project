@@ -1,5 +1,5 @@
 <?php
-require _DIR_ . '/_guard.php';
+require __DIR__  . '/_guard.php';
 
 $error = '';
 $success = '';
@@ -51,21 +51,20 @@ $me = $stmt->fetch();
       <h2>My Profile</h2>
 
         <?php if ($error): ?>
-                <div style="padding:12px;border:1px solid fecaca;background:#fff1f2;border-radius:12px;margin:14px 0;">
-                          <?php echo htmlspecialchars($error); ?>
+     <div style="padding:12px;border:1px solid #fecaca;background:#fff1f2;border-radius:12px;margin:14px 0;">
+    <?php echo htmlspecialchars($error); ?>
         </div>
           <?php endif; ?>
 
             <?php if ($success): ?>
                     <div style="padding:12px;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:12px;margin:14px 0;">
-                              <?php echo htmlspecialchars($success); ?>
+          <?php echo htmlspecialchars($success); ?>
             </div>
               <?php endif; ?>
 
                 <form method="post" class="contact-form">
-                        <label>Name</label>
-                            <input name="name" value="<?php echo htmlspecialchars($me['name'] ?? ''); ?>" required>
-
+      <label>Name</label>
+         <input name="name" value="<?php echo htmlspecialchars($me['name'] ?? ''); ?>" required>
                                 <label>Email</label>
                                     <input type="email" name="email" value="<?php echo htmlspecialchars($me['email'] ?? ''); ?>" required>
 
