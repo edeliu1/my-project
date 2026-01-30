@@ -1,0 +1,157 @@
+.faqja-service{
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.pjesa-lart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.breadcrumbs{
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.titulli-faqes{
+    margin: 6px 0 0 0;
+    font-size: 34px;
+}
+
+.subtitle{
+    margin: 8px 0 0 0;
+    opacity: 0.9;
+    line-height: 1.55;
+    max-width: 900px;
+}
+
+.button{
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 16px 40px rgba(37,99,235,0.30);
+    white-space: nowrap;
+}
+
+.button:hover{
+    transform: translateY(-1px);
+}
+
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.karta{
+    background: rgba(255,255,255,0.96);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    padding: 18px;
+    text-align: left;
+}
+
+.section-title{
+    margin: 0;
+    font-size: 20px;
+}
+
+.lista{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gjerat{
+    border: 1px solid #d7e3ff;
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: #fff;
+}
+
+.gjerat h4{
+  margin:0 0 6px 0;
+  font-size: 16px;
+}
+
+.meta{
+  opacity: 0.85;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.tag{
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #eef2ff;
+    border: 1px solid #d7e3ff;
+    font-size: 12px;
+    font-weight: 800;
+    margin-right: 8px;
+}
+
+.searchbox{
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.searchbox input{
+    width: 100%;
+    padding: 12ppx 14px;
+    border-radius: 12px;
+    border: 1px solid #d7e3ff;
+    outline: none;
+}
+
+.butoni{
+    padding: 12px 16px;
+    border-radius: 12px;
+    border:0;
+    cursor:pointer;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    font-weight:800;
+    box-shadow: 0 16px 40px rgba(37,99,235,.25);
+}
+
+.butoni:hover{
+    transform: translateY(-1px);
+}
+
+.titull-mini{
+  margin: 16px 0 8px 0;
+  font-size: 15px;
+}
+
+.titull-mini.spaced{
+  margin-top: 16px;
+}
+
+@media (max-width: 700px){
+  .pjesa-lart{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchbox{
+    flex-direction: column;
+  }
+
+  .butoni{
+    width: 100%;
+  }
+}
