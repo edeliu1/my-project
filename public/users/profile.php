@@ -27,7 +27,9 @@ $chk->execute([$email, (int)$user['id']]);
                            
      $success = "Profile updated successfully.";
                                                
-                                           
+   }
+ }
+}               
 
 
 $stmt = $pdo->prepare("SELECT id, name, email, role, created_at FROM users WHERE id = ? LIMIT 1");
@@ -43,8 +45,43 @@ $me = $stmt->fetch();
      <link rel="stylesheet" href="../admin/dashboard.css">
 </head>
 <body>
-    <div class="page">
-          <h2>My Profile</h2>
+
+<div class="page">
+      <h2>My Profile</h2>
+
+        <?php if ($error): ?>
+                <div style="padding:12px;border:1px solid fecaca;background:fff1f2;border-radius:12px;margin:14px 0;">
+                          <?php echo htmlspecialchars($error); ?>
+        </div>
+          <?php endif; ?>
+
+            <?php if ($success): ?>
+                    <div style="padding:12px;border:1px solid bbf7d0;background:f0fdf4;border-radius:12px;margin:14px 0;">
+                              <?php echo htmlspecialchars($success); ?>
+            </div>
+              <?php endif; ?>
+
+                <form method="post" class="contact-form">
+                        <label>Name</label>
+                            <input name="name" value="<?php echo htmlspecialchars($me['name'] ?? ''); ?>" required>
+
+                                <label>Email</label>
+                                    <input type="email" name="email" value="<?php echo htmlspecialchars($me['email'] ?? ''); ?>" required>
+
+                                        <button class="btn-primary" type="submit">Save</button>
+            </form>
+
+              <p style="margin-top:18px;opacity:.8;">
+                    Account created: <?php echo htmlspecialchars($me['created_at'] ?? ''); ?>
+            </p>
+
+              <div class="actions" style="margin-top:18px;">
+                    <a class="logout" href="dashboard.php">Back</a>
+            </div>
+            </div>
+            </body>
+            </html>
+   
 
                      
 
