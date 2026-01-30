@@ -1,4 +1,5 @@
-<?phprequire _DIR_ . '/_guard.php';
+<?php
+require _DIR_ . '/_guard.php';
 
 $error = '';
 $success = '';
@@ -9,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
  if ($name === '' || $email === '') {
      $error = "Fill in your name and email.";
- }  elseif (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+ }  elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $error = "Email not valid.";
  } else {
 
@@ -36,7 +37,7 @@ $stmt = $pdo->prepare("SELECT id, name, email, role, created_at FROM users WHERE
  $stmt->execute([(int)$user['id']]);
 $me = $stmt->fetch();
  ?>
- <doctype html>
+ <!DOCTYPE html>
  <html>
  <head>
         <meta charset="utf-8">
@@ -50,13 +51,13 @@ $me = $stmt->fetch();
       <h2>My Profile</h2>
 
         <?php if ($error): ?>
-                <div style="padding:12px;border:1px solid fecaca;background:fff1f2;border-radius:12px;margin:14px 0;">
+                <div style="padding:12px;border:1px solid fecaca;background:#fff1f2;border-radius:12px;margin:14px 0;">
                           <?php echo htmlspecialchars($error); ?>
         </div>
           <?php endif; ?>
 
             <?php if ($success): ?>
-                    <div style="padding:12px;border:1px solid bbf7d0;background:f0fdf4;border-radius:12px;margin:14px 0;">
+                    <div style="padding:12px;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:12px;margin:14px 0;">
                               <?php echo htmlspecialchars($success); ?>
             </div>
               <?php endif; ?>
