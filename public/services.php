@@ -38,30 +38,38 @@ $user = $_SESSION['user'] ?? null;
         </nav>
     </header>
 
-    <section class="services-section">
-        <div class="services-header">
-            <h1>Our City Services</h1>
-            <p>Smart digital solutions for everyday city life in Fushe Kosova</p>
-        </div>
+    <section id="services" class="content-section services-section">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <a href="services/healthcare.php" class="service-card">
+                <span class="icon-circle">🏥</span>
+                <h3>Healthcare</h3>
+            </a>
 
-        <div class="kartat">
-            <div class="service-box">
-                <span class="service-icon">🚆</span>
-                    <h2>Public Transport</h2>
-                    <p>Fast and reliable transportation across the city.</p>
-            </div>
-        
-            <div class="service-box">
-                <span class="service-icon">♻️</span>
-                    <h2>Waste Management</h2>
-                    <p>Eco-friendly waste collection and recycling system.</p>
-            </div>
+            <a href="services/education.php" class="service-card">
+                <span class="icon-circle">🎓</span>
+                <h3>Education</h3>
+            </a>
 
-            <div class="service-box">
-                <span class="service-icon">🚑</span>
-                    <h2>Emergency Services</h2>
-                    <p>24/7 police, fire, and medical assistance.</p>
-            </div>
+            <a href="services/municipal.php" class="service-card">
+                <span class="icon-circle">🏛️</span>
+                <h3>Municipal Administration</h3>
+            </a>
+
+            <a href="services/transport.php" class="service-card">
+                <span class="icon-circle">🚆</span>
+                <h3>Transport</h3>
+            </a>
+
+            <a href="services/documents.php" class="service-card">
+                <span class="icon-circle">📄</span>
+                <h3>Documents</h3>
+            </a>
+
+            <a href="services/requests.php" class="service-card">
+                <span class="icon-circle">✔️</span>
+                <h3>Online Requests</h3>
+            </a>
         </div>
     </section>
 
