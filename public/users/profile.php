@@ -21,7 +21,32 @@ $chk->execute([$email, (int)$user['id']]);
        $upd = $pdo->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
          $upd->execute([$name, $email, (int)$user['id']]);
 
-         
+   $_SESSION['user']['name'] = $name;
+     $_SESSION['user']['email'] = $email;
+     $user = $_SESSION['user'];
+                           
+     $success = "Profile updated successfully.";
+                                               
+                                           
+
+
+$stmt = $pdo->prepare("SELECT id, name, email, role, created_at FROM users WHERE id = ? LIMIT 1");
+ $stmt->execute([(int)$user['id']]);
+$me = $stmt->fetch();
+ ?>
+ <doctype html>
+ <html>
+ <head>
+        <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>My Profile</title>
+     <link rel="stylesheet" href="../admin/dashboard.css">
+</head>
+<body>
+    <div class="page">
+          <h2>My Profile</h2>
+
+                     
 
 
 
