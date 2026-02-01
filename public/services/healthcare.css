@@ -30,3 +30,32 @@ flex-direction: column;
   align-items: center;
    gap: 12px;
      }
+
+
+.logo-area img {height: 52px;} 
+
+.portal-name {
+  font-size: 20px;
+    font-weight: 800;
+}
+
+    .main-nav ul {
+     display: flex;
+    list-style: none;
+    gap: 26px;
+    }
+
+
+    .main-nav a {
+         color: white;
+      text-decoration: none;
+        font-weight: 600;
+          border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+    }
+
+
+            .main-nav a.active,
+            .main-nav a:hover{  
+            border-bottom-color: white;
+            }
