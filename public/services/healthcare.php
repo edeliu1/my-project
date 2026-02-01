@@ -43,3 +43,39 @@ $user = $_SESSION['user'] ?? null;
 <p class="subtitle">
   Digital healthcare services designed to support citizens with fast, reliable, and accessible medical care.
     </p>
+
+
+    <div class="healthcare-grid">
+     <div class="health-card">
+    <div class="icon">🏥</div>
+     <h3>Primary Healthcare</h3>
+     <p>Access family medicine services, clinics, and general health consultations.</p>
+    </div>
+
+        <div class="health-card">
+      <div class="icon">🩺</div>
+     <h3>Medical Appointments</h3>
+    <p>Book, manage, and track your medical appointments online.</p>
+    </div>
+
+        <div class="health-card">
+        <div class="icon">💊</div>
+         <h3>Pharmacy Services</h3>
+     <p>Find nearby pharmacies and check availability of essential medicines.</p>
+    </div>
+
+        <div class="health-card">
+     <div class="icon">🚑</div>
+    <h3>Emergency Care</h3>
+     <p>Immediate access to emergency healthcare and ambulance services.</p>
+    </div>
+    </div>
+    </section>
+
+    <footer class="main-footer">
+     <p>©️ 2025 Smart City Web Portal - Fushe Kosova</p>
+    </footer>
+
+    <script src="../js/healthcare.js"></script>
+    </body>
+    </html>
