@@ -3,7 +3,7 @@
 session_start();
 $user = $_SESSION['user'] ?? null;
 ?>
-<DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
    <head>
   <meta charset="UTF-8">
