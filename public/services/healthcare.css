@@ -8,7 +8,7 @@ padding: 0;
 
  body {
   background: linear-gradient(160deg,#f4f7ff 0%,#eef2ff 50%, #ffffff 100%);
-color: 0a2342;
+color: #0a2342;
  min-height: 100vh;
  display: flex;
 flex-direction: column;
