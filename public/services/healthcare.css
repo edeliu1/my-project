@@ -80,3 +80,27 @@ flex-direction: column;
        max-width: 700px;
       margin: 0 auto 50px;
             }
+
+.healthcare-grid {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+}
+
+
+      .health-card {
+        background: white;
+          border-radius: 18px;
+  padding: 34px 28px;
+      box-shadow: 0 14px 35px rgba(2,6,23,0.08);
+  border: 1px solid rgba(37,99,235,0.15);
+     transition: transform .25s ease, box-shadow .25s ease;
+      }
+
+
+  .health-card:hover {
+        transform: translateY(-6px);
+          box-shadow: 0 20px 55px rgba(2,6,23,0.12);
+            }
+
+
