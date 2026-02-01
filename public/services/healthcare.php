@@ -10,3 +10,16 @@ $user = $_SESSION['user'] ?? null;
    <link rel="stylesheet" href="../css/healthcare.css">
 </head>
 <body>
+
+<header class="main-header">
+<div class="logo-area">
+<img src="../images/logo.fk.png" alt="Fushe Kosova Logo">
+ <span class="portal-name">Fushe Kosova</span>
+</div>
+
+  <nav class="main-nav">
+ <ul>
+    <li><a href="../index.php">Home</a></li>
+    <li><a href="../about.php">About us</a></li>
+     <li><a href="../services.php" class="active">Services</a></li>
+    <li><a href="../contact.php">Contact</a></li>
