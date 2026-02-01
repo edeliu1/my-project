@@ -1,0 +1,122 @@
+.news-side-wrap{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.news-mini-card{
+  width: 360px;
+  max-width: 92vw;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(37,99,235,.15);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.10);
+  padding: 14px 14px 12px 14px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-mini-top{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  opacity: .85;
+}
+
+.news-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #2563eb;
+  box-shadow: 0 0 0 6px rgba(37,99,235,.15);
+}
+
+.news-mini-title{
+  font-weight: 800;
+}
+
+.news-mini-time{
+  margin-left: auto;
+  font-size: 12px;
+  opacity: .75;
+}
+
+.news-mini-head{
+  margin: 10px 0 6px 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.news-mini-desc{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: .9;
+  min-height: 42px;
+}
+
+.news-mini-actions{
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-mini-btn{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 14px 35px rgba(37,99,235,.35);
+  font-size: 13px;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.news-mini-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.news-mini-dots{
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.news-mini-dots .dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  background: rgba(37,99,235,.25);
+  transition: transform .12s ease, background .12s ease;
+}
+
+.news-mini-dots .dot:hover{
+  transform: scale(1.1);
+}
+
+.news-mini-dots .dot.active{
+  background: #2563eb;
+}
+
+@media (min-width: 900px){
+  #news .news-side-wrap{
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 520px){
+  .news-mini-card{
+    width: 100%;
+  }
+}

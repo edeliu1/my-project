@@ -1,56 +1,47 @@
-(function () {
+document.addEventListener("DOMContentLoaded", () => {
   const data = window.NEWS_DATA || [];
+  if (!Array.isArray(data) || data.length === 0) return;
+
   const titleEl = document.getElementById("newsTitle");
   const shortEl = document.getElementById("newsShort");
   const timeEl = document.getElementById("newsTime");
   const readMoreEl = document.getElementById("newsReadMore");
-  const dotsWrap = document.getElementById("newsDots");
+  const dotsEl = document.getElementById("newsDots");
 
-  if (!titleEl || !shortEl || !readMoreEl || !dotsWrap) return;
-
-  let i = 0;
+  let current = 0;
   let timer = null;
 
   function renderDots() {
-    dotsWrap.innerHTML = "";
-    data.forEach((_, idx) => {
+    if (!dotsEl) return;
+    dotsEl.innerHTML = "";
+    data.forEach((_, i) => {
       const b = document.createElement("button");
       b.type = "button";
-      b.className = "news-dot-btn" + (idx === i ? " active" : "");
+      b.className = "dot" + (i === current ? " active" : "");
       b.addEventListener("click", () => {
-        i = idx;
-        show();
+        current = i;
+        render();
         restart();
       });
-      dotsWrap.appendChild(b);
+      dotsEl.appendChild(b);
     });
   }
 
-  function show() {
-    if (!data.length) {
-      titleEl.textContent = "No news yet";
-      shortEl.textContent = "Please add news in admin panel.";
-      readMoreEl.href = "#";
-      timeEl.textContent = "";
-      dotsWrap.innerHTML = "";
-      return;
-    }
+  function render() {
+    const n = data[current];
+    if (!n) return;
 
-    const n = data[i];
-    titleEl.textContent = n.title;
-    shortEl.textContent = n.short;
-    timeEl.textContent = n.date ? n.date : "";
-    readMoreEl.href = "news_view.php?id=" + n.id;
+    if (titleEl) titleEl.textContent = n.title || "";
+    if (shortEl) shortEl.textContent = n.short || "";
+    if (timeEl) timeEl.textContent = n.date ? String(n.date) : "";
+    if (readMoreEl) readMoreEl.href = "news.php?id=" + n.id;
 
-    [...dotsWrap.querySelectorAll(".news-dot-btn")].forEach((d, idx) => {
-      d.classList.toggle("active", idx === i);
-    });
+    renderDots();
   }
 
   function next() {
-    if (!data.length) return;
-    i = (i + 1) % data.length;
-    show();
+    current = (current + 1) % data.length;
+    render();
   }
 
   function restart() {
@@ -58,7 +49,7 @@
     timer = setInterval(next, 10000); 
   }
 
-  renderDots();
-  show();
+  render();
   restart();
-})();
+});
+
