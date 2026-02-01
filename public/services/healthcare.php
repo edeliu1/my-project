@@ -1,4 +1,6 @@
-<?phpsession_start();
+<?php
+
+session_start();
 $user = $_SESSION['user'] ?? null;
 ?>
 <DOCTYPE html>
@@ -23,3 +25,21 @@ $user = $_SESSION['user'] ?? null;
     <li><a href="../about.php">About us</a></li>
      <li><a href="../services.php" class="active">Services</a></li>
     <li><a href="../contact.php">Contact</a></li>
+
+    <?php if ($user): ?>
+    <?php if(strtolower((string)$user['role']) === 'admin'): ?>
+    <li><a href="../dashboard.php">Dashboard</a></li>
+     <?php endif; ?>
+    <li><a href="../logout.php">Logout</a></li>
+    <?php else: ?>
+    <li><a href="../login.php">Login</a></li>
+    <?php endif; ?>
+ </ul>
+ </nav>
+</header>
+
+  <section class="healthcare-section">
+<h1>Healthcare Services</h1>
+<p class="subtitle">
+  Digital healthcare services designed to support citizens with fast, reliable, and accessible medical care.
+    </p>
