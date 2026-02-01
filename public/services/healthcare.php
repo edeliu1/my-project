@@ -9,7 +9,7 @@ $user = $_SESSION['user'] ?? null;
   <meta charset="UTF-8">
  <title>Healthcare Services</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/healthcare.css">
+   <link rel="stylesheet" href="healthcare.css">
 </head>
 <body>
 
@@ -43,6 +43,10 @@ $user = $_SESSION['user'] ?? null;
 <p class="subtitle">
   Digital healthcare services designed to support citizens with fast, reliable, and accessible medical care.
     </p>
+<div class="actions">
+  <a class="btn btn-secondary" href="../services.php">← Back to Services</a>
+</div>
+
 
 
     <div class="healthcare-grid">
