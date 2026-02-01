@@ -141,3 +141,10 @@ font-size: 16px;
 }
 
 
+
+@media (max-width: 900px) {
+  .healthcare-grid {grid-template-columns: 1fr;} 
+    .healthcare-section h1{ font-size: 40px; }
+}
+
+
