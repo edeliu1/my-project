@@ -59,3 +59,24 @@ flex-direction: column;
             .main-nav a:hover{  
             border-bottom-color: white;
             }
+        
+.healthcare-section {
+  max-width: 1100px;
+    margin: 0 auto;
+      padding: 70px 24px 90px;
+        text-align: center;
+}
+
+
+        .healthcare-section h1  {
+            font-size: 52px;
+          font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+    .subtitle{
+   font-size: 18px;
+    color: 334155;
+       max-width: 700px;
+      margin: 0 auto 50px;
+            }
