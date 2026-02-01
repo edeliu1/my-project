@@ -104,3 +104,30 @@ flex-direction: column;
             }
 
 
+.icon {
+     width: 82px;
+  height: 82px;
+ border-radius: 50%;
+background: 1d4ed8;
+    display: grid;
+  place-items: center;
+     color: white;
+    font-size: 34px;
+        margin: 0 auto 18px;
+ box-shadow: 0 14px 25px rgba(29,78,216,0.25);
+}
+
+
+ .health-card h3  {
+    font-size: 22px;
+  font-weight: 800;
+    margin-bottom: 10px;
+ }
+
+
+.health-card p  {
+font-size: 16px;
+   color: 475569;
+      line-height: 1.6;
+}
+
