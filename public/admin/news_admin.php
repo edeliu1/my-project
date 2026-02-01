@@ -6,22 +6,39 @@ require __DIR__ . '/_csrf.php';
 $error = '';
 $success = '';
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_check();
 
     $title = trim($_POST['title'] ?? '');
-    $body = trim($_POST['body'] ?? '');
+    $body  = trim($_POST['body'] ?? '');
 
-    if($title === '' || $body === ''){
+    if ($title === '' || $body === '') {
         $error = 'Fill in the title and content!';
-    } else{
-        $stmt = $pdo->prepare("INSERT INTO news (title, body, created_at) VALUES (?, ?, NOW())");
-        $stmt -> execute([$title, $body]);
-        $success = 'The news was added successfully!';
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO news (title, body, created_by, created_at)
+            VALUES (?, ?, ?, NOW())
+        ");
+        $stmt->execute([
+            $title,
+            $body,
+            (int)$_SESSION['user']['id']
+        ]);
+
+        header("Location: news_admin.php?ok=1");
+        exit;
     }
 }
 
-$rows = $pdo-> query("SELECT id, title, created_at FROM news ORDER BY id DESC") -> fetchAll(PDO::FETCH_ASSOC);
+if (isset($_GET['ok'])) {
+    $success = 'The news was added successfully!';
+}
+
+$rows = $pdo->query("
+    SELECT id, title, created_at
+    FROM news
+    ORDER BY id DESC
+")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>

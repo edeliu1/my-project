@@ -1,6 +1,29 @@
 <?php
 session_start();
 $user = $_SESSION['user'] ?? null;
+
+require __DIR__ . '/../app/core/Database.php';
+$config = require __DIR__ . '/../config/config.php';
+$db = new Database($config);
+
+$newsRows = $db->getPdo()->query("SELECT id, title, body, created_at
+                                 FROM news
+                                 ORDER BY created_at DESC
+                                 LIMIT 5")->fetchAll(PDO::FETCH_ASSOC);
+
+$newsForWidget = [];
+foreach ($newsRows as $n) {
+    $body = (string)($n['body'] ?? '');
+    $short = mb_substr(trim($body), 0, 120);
+    if (mb_strlen(trim($body)) > 120) $short .= '...';
+
+    $newsForWidget[] = [
+        'id' => (int)$n['id'],
+        'title' => (string)$n['title'],
+        'short' => $short,
+        'date' => (string)($n['created_at'] ?? '')
+    ];
+}
 ?>
 
 <!DOCTYPE html>
@@ -79,42 +102,35 @@ $user = $_SESSION['user'] ?? null;
             </a>
         </div>
     </section>
-
-    <section id="events" class="content-section events-section">
-        
-        <div class="event-card glass-box">
-            <h3>Smart City Innovation Day</h3>
-            <p>Date: 12 April 2025</p>
-            <p>Location: Fushe Kosove Municipality Hall</p>
-            <p>Join us to explore new digital services and meet local innovators.</p>
-        </div>
-        <div class="event-card glass-box">
-            <h3>Community Clean-Up</h3>
-            <p>Date: 25 April 2025</p>
-            <p>Volunteers will gather in the city park to support a cleaner environment.</p>
-
-        </div>    
-    </section>
     
-    <section id="news" class="content-section news-section">   
-         <h2>Latest Announcements</h2>
-         <div class="news-grid">
-            <div class="news-card">
-                <h3>Road Infratstructure Update</h3>
-                <p>The municipality has started road reconstruction in the central area. Expected completion: March 2025.</p>
-            </div>
+    <section id="news" class="content-section news-section">
+  <h2>Latest Announcements</h2>
 
-            <div class="news-card">
-                <h3>New School Renovation</h3>
-                <p>Renovation of "Dardania" School is underway with new classrooms and digital equipment.</p>
-            </div>
+  <div class="news-side-wrap">
+    <div class="news-mini-card" id="newsWidget">
+      <div class="news-mini-top">
+        <span class="news-dot"></span>
+        <span class="news-mini-title">Latest</span>
+        <span class="news-mini-time" id="newsTime"></span>
+      </div>
 
-            <div class="news-card">
-                <h3>Train Schedules Changes</h3>
-                <p>Update Train schedules for Prishtina-Fushe Kosova route starting next week.</p>
-            </div>
-        </div>
-    </section>
+      <h3 class="news-mini-head" id="newsTitle">No news yet</h3>
+      <p class="news-mini-desc" id="newsShort">Please add news in admin panel.</p>
+
+      <div class="news-mini-actions">
+        <a class="news-mini-btn" id="newsReadMore" href="#">Read more</a>
+      </div>
+
+      <div class="news-mini-dots" id="newsDots"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.NEWS_DATA = <?php echo json_encode($newsForWidget, JSON_UNESCAPED_UNICODE); ?>;
+</script>
+<script src="js/index.js"></script>
+
     <section  id="statistics" class="content-section stats-section">
         <h2>City statistics</h2>
         <div class="stats-grid">
@@ -194,29 +210,24 @@ $user = $_SESSION['user'] ?? null;
         </form>
     </section>
 
+    <div class="news-sidebar">
+    <h3>Latest News</h3>
 
-    <section id="faq" class="content-section faq-section">
-        <h2>FAQ</h2>
-        <div class="faq-item">
-            <h3>How can i access online services?</h3>
-            <p>You can browse through the Services section and choose the service you need.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Where can i find contact information?</h3>
-            <p>All contact details are listed in the Conatct section at the bottom of the page.</p>
-        </div>
-    </section>  
-    
-    <section id="alerts" class="content-section alerts-section">
-        <h2>Emergency Alerts</h2>
-        <div class="alert-box">
-            <strong>Traffic Alert:</strong> Road blocked near City Center due tto maintenance work.
-        </div>
+    <?php foreach ($newsForWidget as $n): ?>
+        <div class="news-item">
+            <h4><?= htmlspecialchars($n['title']) ?></h4>
 
-        <div class="alert-box">
-            <strong>Weather Warning:</strong>Heavy rain expected tonight. Drive safely.</strong>
+            <p>
+                <?= htmlspecialchars(mb_substr($n['body'], 0, 150)) ?>...
+            </p>
+
+            <a href="news.php?id=<?= (int)$n['id'] ?>">
+                Read more →
+            </a>
         </div>
-    </section>
+    <?php endforeach; ?>
+</div>
+
                 
     <footer class="main-footer">
         <p>© 2025 Smart City Web Portal - Fushe Kosova</p>
@@ -224,5 +235,6 @@ $user = $_SESSION['user'] ?? null;
 
     <script src="js/index.js"></script>
 
+    
 </body>
 </html>
