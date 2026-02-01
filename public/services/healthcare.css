@@ -131,3 +131,13 @@ font-size: 16px;
       line-height: 1.6;
 }
 
+
+.main-footer {
+  margin-top: auto;
+    padding: 18px;
+      text-align: center;
+        background: linear-gradient(135deg,0b1f3a,0a2342);
+          color: white;
+}
+
+
