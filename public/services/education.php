@@ -59,5 +59,5 @@ $user = $_SESSION['user'] ?? null;
             <dic class="text">
                 <h3>Student Enrollment</h3>
                 <p class="meta">Information about enrollment procedures, requirements, and deadlines.</p>
-                </div>
-                </div>
+      </div>
+  </div>
