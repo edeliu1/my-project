@@ -16,4 +16,15 @@ document.addEventListener("DOMContentLoaded",()=> {
         });
     },{threshold:.12});
     cards.forEach(c=>io.observe(c));
-})
+ 
+document.querySelector(".link-btn").forEach(b=>{
+    b.onclick=()=>{
+        const t=document.querySelector(b.dataset.target);
+        if(!t)return;
+
+        t.scrollintoView({behavior:"smooth",block:"center"});
+          t.classList.add("is-focused");
+          setTimeout(()=>t.classList.remove("is-focused"),1400);
+    };
+});
+});
