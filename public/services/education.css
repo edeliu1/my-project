@@ -18,3 +18,9 @@
     opacity: 75;
     margin-bottom: 6px;
 }
+
+.page-title{
+    font-size: 52px;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+}
