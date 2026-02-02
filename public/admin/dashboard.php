@@ -61,7 +61,10 @@ $user = $_SESSION['user'];
     </ul>
 
     <div class="actions">
+        <a class="btn-home" href="../index.php">← Home</a>
         <a class="logout" href="../logout.php">Logout</a>
     </div>
+
+
 </body>
 </html>

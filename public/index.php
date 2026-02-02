@@ -2,6 +2,12 @@
 session_start();
 $user = $_SESSION['user'] ?? null;
 
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit;
+}
+
 require __DIR__ . '/../app/core/Database.php';
 $config = require __DIR__ . '/../config/config.php';
 $db = new Database($config);
