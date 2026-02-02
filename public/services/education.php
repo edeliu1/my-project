@@ -44,3 +44,8 @@ $user = $_SESSION['user'] ?? null;
             <p class="subtitle">
                 An overview of education-related services in the municipality, including enrollments,
                 certificates, scholarships, and school transport information.
+                </p>
+               </div>
+               <div class="btn btn-secondary" href="../services.php">← Back to Services</a>
+                </div>
+               </div>
