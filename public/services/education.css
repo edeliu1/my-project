@@ -1,0 +1,14 @@
+
+.education-page{
+ max-width: 1100px;
+ margin: 0 auto;
+ padding: 70px 24px 90px;
+}
+
+.topbar{
+    display: flex;
+    justify-self: space-between;
+    align-items: flex-start;
+    gap:18px;
+    margin-bottom: 26px;
+}
