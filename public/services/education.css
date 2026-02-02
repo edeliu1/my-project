@@ -24,3 +24,9 @@
     font-weight: 900;
     margin: 0 0 10px 0;
 }
+
+.subtitle{
+    font-size: 18px;
+    color: #334155;
+    max-width: 780px;
+}
