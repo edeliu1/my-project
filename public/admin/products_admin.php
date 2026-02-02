@@ -13,25 +13,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = trim($_POST['description'] ?? '');
     $price = trim($_POST['price'] ?? '');
     $image = trim($_POST['image'] ?? '');
-    $pdf = trim($_POST['pdf'] ?? '');
 
-    if ($name === '') {
-        $error = "Name is required.";
-    } elseif ($price !== '' && !is_numeric($price)) {
-        $error = "Price must be a number (or leave empty).";
-    } else {
-        $createdBy = (int)($_SESSION['user']['id'] ?? 0);
-        $priceVal = ($price === '') ? 0 : (float)$price;
+    $priceVal = ($price === '') ? 0 : (float)$price;
+    $createdBy = (int)($_SESSION['user']['id'] ?? 0);
 
+    $pdfPath = null;
+
+    if (!empty($_FILES['pdf']['name'])) {
+        if ($_FILES['pdf']['error'] === UPLOAD_ERR_OK) {
+            $tmp = $_FILES['pdf']['tmp_name'];
+            $ext = strtolower(pathinfo($_FILES['pdf']['name'], PATHINFO_EXTENSION));
+
+            if ($ext !== 'pdf') {
+                $error = 'Only PDF files are allowed.';
+            } else {
+                $newName = 'offer_' . time() . '_' . rand(1000,9999) . '.pdf';
+                $dest = __DIR__ . '/../uploads/pdfs/' . $newName;
+
+                if (move_uploaded_file($tmp, $dest)) {
+                    $pdfPath = 'uploads/pdfs/' . $newName;
+                } else {
+                    $error = 'PDF upload failed.';
+                }
+            }
+        }
+    }
+
+    if ($error === '') {
         $stmt = $pdo->prepare(
             "INSERT INTO products (name, description, price, image_path, pdf_path, created_by, created_at)
              VALUES (?, ?, ?, ?, ?, ?, NOW())"
         );
-        $stmt->execute([$name, $description, $priceVal, $image, $pdf, $createdBy]);
 
-        $success = "Offer added successfully.";
+        $stmt->execute([
+            $name,
+            $description,
+            $priceVal,
+            $image,
+            $pdfPath,
+            $createdBy
+        ]);
+
+        $success = 'Offer added successfully.';
     }
 }
+
 
 $rows = $pdo->query(
     "SELECT id, name, description, price, image_path, pdf_path, created_at
@@ -64,7 +90,8 @@ $rows = $pdo->query(
   <h3>Add Offer</h3>
 
   <div class="card">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
+
       <?php csrf_input(); ?>
 
       <div class="form-row">
@@ -88,9 +115,10 @@ $rows = $pdo->query(
       </div>
 
       <div class="form-row">
-        <label>PDF path (optional)</label>
-        <input name="pdf" placeholder="docs/parking-permit.pdf or https://...">
+        <label>Attach PDF (optional)</label>
+        <input type="file" name="pdf" accept="application/pdf">
       </div>
+
 
       <button class="btn-primary" type="submit">Add</button>
     </form>

@@ -1,11 +1,17 @@
 <?php
-require __DIR__ . '/admin/_db.php';
+session_start();
+$user = $_SESSION['user'] ?? null;
+$isAdmin = $user && strtolower((string)($user['role'] ?? '')) === 'admin';
 
-$rows = $pdo->query(
-    "SELECT id, name, description, price, image_path, pdf_path, created_at
-     FROM products
-     ORDER BY id DESC"
-)->fetchAll(PDO::FETCH_ASSOC);
+require __DIR__ . '/../app/core/Database.php';
+$config = require __DIR__ . '/../config/config.php';
+$db = new Database($config);
+
+$rows = $db->getPdo()->query("
+    SELECT id, name, description, price, image_path, pdf_path, created_at
+    FROM products
+    ORDER BY id DESC
+")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html lang="en">
@@ -17,45 +23,91 @@ $rows = $pdo->query(
 </head>
 <body>
 
-<header class="top">
-  <h1>Municipal Offers</h1>
-  <p>Forms, guides, and service information packs from the municipality.</p>
+<header class="main-header">
+  <div class="logo-area">
+    <img src="images/logo.fk.png" alt="Fushe Kosova Logo">
+    <span class="portal-name">Fushe Kosova</span>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="about.php">About us</a></li>
+      <li><a href="services.php">Services</a></li>
+      <li><a href="contact.php">Contact</a></li>
+      <li><a class="active" href="offers.php">Offers</a></li>
+
+      <?php if ($user): ?>
+        <?php if ($isAdmin): ?>
+          <li><a href="admin/dashboard.php">Admin</a></li>
+        <?php endif; ?>
+        <li><a href="logout.php">Logout</a></li>
+      <?php else: ?>
+        <li><a href="login.php">Login</a></li>
+      <?php endif; ?>
+    </ul>
+  </nav>
 </header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Municipal Offers</h1>
+    <p>Forms, guides, and service information packs from the municipality.</p>
+  </div>
+</section>
 
 <main class="wrap">
   <?php if (!$rows): ?>
-    <p class="empty">No offers available right now.</p>
+    <div class="empty">
+      <h3>No offers available right now.</h3>
+      <p>Add offers from the admin panel.</p>
+    </div>
   <?php else: ?>
     <div class="grid">
       <?php foreach ($rows as $r): ?>
-        <article class="offer">
-          <?php if (!empty($r['image_path'])): ?>
-            <div class="img">
-              <img src="<?php echo htmlspecialchars($r['image_path']); ?>" alt="">
+        <?php
+          $name = (string)($r['name'] ?? '');
+          $desc = (string)($r['description'] ?? '');
+          $price = (float)($r['price'] ?? 0);
+          $img = trim((string)($r['image_path'] ?? ''));
+          $pdf = trim((string)($r['pdf_path'] ?? ''));
+        ?>
+        <article class="card">
+          <?php if ($img !== ''): ?>
+            <div class="card-img">
+              <img src="<?php echo htmlspecialchars($img); ?>" alt="">
+            </div>
+          <?php else: ?>
+            <div class="card-img placeholder">
+              <span>📄</span>
             </div>
           <?php endif; ?>
 
-          <h2><?php echo htmlspecialchars($r['name']); ?></h2>
+          <div class="card-body">
+            <div class="card-top">
+              <h2><?php echo htmlspecialchars($name); ?></h2>
+              <span class="badge"><?php echo ($price <= 0) ? 'Free' : '€' . number_format($price, 2); ?></span>
+            </div>
 
-          <div class="badge">
-            <?php
-              $p = (float)($r['price'] ?? 0);
-              echo ($p <= 0) ? "Free" : "€" . number_format($p, 2);
-            ?>
-          </div>
+            <p class="desc"><?php echo nl2br(htmlspecialchars($desc)); ?></p>
 
-          <p><?php echo nl2br(htmlspecialchars($r['description'])); ?></p>
-
-          <div class="btns">
-            <?php if (!empty($r['pdf_path'])): ?>
-              <a class="btn" href="<?php echo htmlspecialchars($r['pdf_path']); ?>" target="_blank" rel="noopener">Download PDF</a>
-            <?php endif; ?>
+            <div class="actions">
+              <?php if ($pdf !== ''): ?>
+                <a class="btn" href="<?php echo htmlspecialchars($pdf); ?>" target="_blank" rel="noopener">Download PDF</a>
+              <?php else: ?>
+                <span class="muted">No PDF attached</span>
+              <?php endif; ?>
+            </div>
           </div>
         </article>
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
 </main>
+
+<footer class="main-footer">
+  <p>© 2025 Smart City Web Portal - Fushe Kosova</p>
+</footer>
 
 </body>
 </html>
