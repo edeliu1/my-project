@@ -67,6 +67,14 @@ $user = $_SESSION['user'] ?? null;
     <div class="text">
         <h3>scholarships</3>
         <p class="meta">Details on available scholarship programs and application stpes.</p>
-    </div>
-   </div>
+    </div>   
+ </div>
+
+<div class="item" id="svc-certificates">
+    <div class="icon">📄</div>
+    <div class="text">
+        <h3>School certificates</h3>
+        <p class="meta">Requests for confirmations, attendance letters, and certificates.</p>
+  </div> 
+ </div>      
 
