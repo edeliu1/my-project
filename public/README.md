@@ -1,5 +1,4 @@
-# My project
-# Smart City Web Portal – Fushe Kosova
+# My project - Smart City Web Portal – Fushe Kosova
 
 This project is a web-based Smart City platform developed to provide digital
 access to municipal services for the citizens of Fushe Kosova.
@@ -40,3 +39,5 @@ Computer Science – Bachelor
 
 ## Here is my project's link:
 https://github.com/edeliu1/my-project.git
+https://github.com/edeliu1/my-project
+
