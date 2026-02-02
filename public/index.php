@@ -1,12 +1,7 @@
 <?php
 session_start();
 $user = $_SESSION['user'] ?? null;
-
-
-if(!isset($_SESSION['user'])){
-    header("Location: login.php");
-    exit;
-}
+$isAdmin = $user && strtolower((string)($user['role'] ?? '')) === 'admin';
 
 require __DIR__ . '/../app/core/Database.php';
 $config = require __DIR__ . '/../config/config.php';
