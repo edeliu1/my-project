@@ -82,3 +82,15 @@
     border-radius: 14px;
     background: #eef2ff;
 }
+
+.meta{ 
+    font-size: 13px;
+    opacity: .85;
+}
+
+.searchbox input{
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #d7e3ff;
+}
