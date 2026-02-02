@@ -85,5 +85,35 @@ $user = $_SESSION['user'] ?? null;
         <p class="meta">Information on routes, eligibility, and transport rules.</p>
     </div>
    </div>
-  </div>    
+  </div>   
+  
+  <div class="karta">
+    <h2 class="section-title">Search & Information</h2>
+
+<div class="searchbox">
+        <input id="q" type="text" placeholder="Search education services">
+        <button class="btn-primary" type="button" onclick="filterEducation()">Search</button>
+      </div>
+
+      <h3 class="mini-title">Opening Hours</h3>
+      <p class="meta">Monday–Friday: 08:00–16:00</p>
+
+      <h3 class="mini-title spaced">Quick Links</h3>
+      <div class="links">
+        <button class="link-btn" data-target="#svc-enrollment">Enrollment</button>
+        <button class="link-btn" data-target="#svc-scholarships">Scholarships</button>
+        <button class="link-btn" data-target="#svc-certificates">Certificates</button>
+        <button class="link-btn" data-target="#svc-transport">Transport</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <p>© 2025 Smart City Web Portal - Fushe Kosova</p>
+</footer>
+
+<script src="education.js"></script>
+</body>
+</html> 
 
