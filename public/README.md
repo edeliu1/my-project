@@ -40,4 +40,3 @@ Computer Science – Bachelor
 ## Here is my project's link:
 https://github.com/edeliu1/my-project.git
 https://github.com/edeliu1/my-project
-
