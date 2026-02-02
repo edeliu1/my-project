@@ -72,3 +72,13 @@
     padding: 12px 14px;
     margin-top: 12px;
 }
+
+.icon{
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    border-radius: 14px;
+    background: #eef2ff;
+}
