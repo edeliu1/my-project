@@ -26,7 +26,8 @@ $user = $_SESSION['user'] ?? null;
                 <li><a href="about.php">About us</a></li>
                 <li><a href="services.php" class="active">Services</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                
+                <li><a href="offers.php">Offers</a></li>
+
                 <?php if ($user): ?>
                     <?php if(strtolower((string)$user['role']) === 'admin'): ?>
                         <li><a href="dashboard.php">Dashboard</a></li>

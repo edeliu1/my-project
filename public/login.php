@@ -51,6 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+    <header class="main-header">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.php" class="active">Home</a></li>
+            <li><a href="about.php">About us</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="offers.php">Offers</a></li>
+        </ul>
+    </nav>
+</header>
     <div class="hyrja-wrapper">
     <h2>Login</h2>
 

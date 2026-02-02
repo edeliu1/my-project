@@ -24,6 +24,7 @@ $user= $_SESSION['user'] ?? null;
                 <li><a href="about.php">About us</a></li>
                 <li><a href="services.php">Services</a></li>
                 <li><a href="contact.php" class="active">Contact</a></li>
+                <li><a href="offers.php">Offers</a></li>
 
                 <?php if($user): ?>
                     <li><a href="logout.php">Logout</a></li>

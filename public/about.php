@@ -24,6 +24,7 @@ $user = $_SESSION['user'] ?? null;
                 <li><a href="services.php">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.php">Login</a></li>
+                <li><a href="offers.php">Offers</a></li>
             </ul>
         </nav>
     </header>
