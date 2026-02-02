@@ -1,149 +1,158 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 body{
-    min-height:100vh;
-    background: linear-gradient(160deg,#e0f2fe 0%,#dbeafe 50%,#bfdbfe 100%);
-    color:#0a2342;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(160deg,#f4f7ff 0%,#eef2ff 50%,#ffffff 100%);
+  color: #0a2342;
 }
 
 .main-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background: linear-gradient(135deg,#2563eb,#1e40af);
-    color:white;
-}
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-area img{
-    height:48px;
-}
-
-.portal-name{
-    font-size:20px;
-    font-weight:700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg,rgba(37,99,235,0.95), rgba(30,64,175,0.95));
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .main-nav ul{
-    list-style:none;
-    display:flex;
-    gap:18px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav a{
-    text-decoration:none;
-    color:white;
-    font-weight:700;
-    opacity:.9;
+  text-decoration: none;
+  color: #dbeafe;
+  font-size: 15px;
+  opacity: 0.85;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
 }
 
-.main-nav a.active,
-.main-nav a:hover{
-    opacity:1;
-    text-decoration:underline;
+.main-nav a:hover,
+.main-nav a.active{
+  opacity: 1;
+  color: white;
+  border-bottom: 2px solid rgba(255,255,255,0.9);
 }
 
-.login-section{
-    max-width:480px;
-    margin:90px auto 120px;
-    background: rgba(255,255,255,0.97);
-    border:1px solid #d7e3ff;
-    border-radius:22px;
-    box-shadow:0 22px 55px rgba(10,35,66,0.14);
-    padding:32px 30px;
+.auth-page{
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-.login-section h2{
-    font-size:32px;
-    margin-bottom:6px;
+.hyrja-wrapper{
+  max-width: 720px;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  padding: 30px 26px;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+  border: 1px solid rgba(10,35,66,0.06);
+  animation: fadeIn 0.6s ease;
 }
 
-.login-section p{
-    opacity:.85;
-    margin-bottom:18px;
+#gabim{
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(220,38,38,0.08);
+  border: 1px solid rgba(220,38,38,0.25);
+  color: #b91c1c;
+  text-align: center;
+  animation: dridhje 0.35s ease;
 }
 
-.login-form{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+.hyrja-wrapper form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.login-form label{
-    font-weight:700;
-    color:#0a2342;
+.hyrja-wrapper label{
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 6px;
 }
 
-.login-form input{
-    padding:12px 14px;
-    border-radius:12px;
-    border:1px solid rgba(10,35,66,.25);
-    outline:none;
-    font-size:15px;
+.hyrja-wrapper input{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #bcd0ff;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
 }
 
-.login-form input:focus{
-    border-color:#2563eb;
-    box-shadow:0 0 0 3px rgba(37,99,235,.18);
+.hyrja-wrapper input:focus{
+  border-color: #1d4ed8;
+  box-shadow: 0 0 4px rgba(29,78,216,0.35);
+  transform: translateY(-1px);
 }
 
-.login-error{
-    background:#fee2e2;
-    border:1px solid #fecaca;
-    color:#b91c1c;
-    padding:10px 12px;
-    border-radius:12px;
-    font-weight:700;
+.hyrja-wrapper button{
+  box-shadow: 0 16px 40px rgba(37,99,235,0.40);
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.25s;
 }
 
-.login-btn{
-    margin-top:8px;
-    padding:12px 16px;
-    border-radius:12px;
-    border:0;
-    cursor:pointer;
-    font-weight:800;
-    color:white;
-    background: linear-gradient(135deg,#2563eb,#1e40af);
-    box-shadow:0 16px 40px rgba(37,99,235,0.35);
-    transition:.2s;
+.hyrja-wrapper button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 24px 55px rgba(37,99,235,0.45);
 }
 
-.login-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 22px 55px rgba(37,99,235,0.45);
+.hyrja-wrapper p{
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
 }
 
-.main-footer{
-    text-align:center;
-    padding:20px;
-    opacity:.75;
+.hyrja-wrapper a{
+  color: #1d4ed8;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-@media (max-width:600px){
-    .main-header{
-        padding:14px 20px;
-        flex-wrap:wrap;
-        gap:12px;
-    }
+.hyrja-wrapper a:hover{
+  text-decoration: underline;
+}
 
-    .login-section{
-        margin:50px 16px 80px;
-        padding:26px 22px;
-    }
+.hyrja-wrapper h2{
+  text-align: center;
+}
 
-    .login-section h2{
-        font-size:26px;
-    }
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes dridhje{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-6px)}
+  50%{transform:translateX(6px)}
+  75%{transform:translateX(-4px)}
+  100%{transform:translateX(0)}
 }

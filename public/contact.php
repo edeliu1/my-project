@@ -1,7 +1,36 @@
 <?php
 session_start();
-$user= $_SESSION['user'] ?? null;
+
+$user = $_SESSION['user'] ?? null;
+$isAdmin = $user && strtolower(trim((string)($user['role'] ?? ''))) === 'admin';
+
+
+require __DIR__ . '/../app/core/Database.php';
+$config = require __DIR__ . '/../config/config.php';
+$db = new Database($config);
+$pdo = $db->getPdo();
+
+$error = '';
+$success = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    if ($name === '' || $email === '' || $subject === '' || $message === '') {
+        $error = "Plotëso krejt fushat.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Email jo valid.";
+    } else {
+        $stmt = $pdo->prepare("INSERT INTO contact_messages (name,email,subject,message) VALUES (?,?,?,?)");
+        $stmt->execute([$name,$email,$subject,$message]);
+        $success = "Mesazhi u dërgua me sukses!";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,20 +69,22 @@ $user= $_SESSION['user'] ?? null;
         <h2>Contact</h2>
         <p>For any issues, suggestions or support, you can contact the municipal administration</p>
 
-        <form id="contactForm" class="contact-form">
-            <label>Name</label>
-            <input id="name" type="text" name="name" required>
+        <form class="contact-form" method="post" action="contact.php">
+  <label>Name</label>
+  <input type="text" name="name" required>
 
-            <label>Email</label>
-            <input id="email" type="email" name="email" required>
+  <label>Email</label>
+  <input type="email" name="email" required>
 
-            <label>Message</label>
-            <textarea id"message" name="message" rows="4" required></textarea>
+  <label>Subject</label>
+  <input type="text" name="subject" required>
 
-            <p id="contactError" class="form-error"></p>
+  <label>Message</label>
+  <textarea name="message" rows="4" required></textarea>
 
-            <button type="submit" class="btn-primary">Send</button>
-        </form>
+  <button type="submit" class="btn-primary">Send</button>
+</form>
+
     </section>
 
 <footer class="main-footer">

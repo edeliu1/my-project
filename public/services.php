@@ -30,7 +30,7 @@ $user = $_SESSION['user'] ?? null;
 
                 <?php if ($user): ?>
                     <?php if(strtolower((string)$user['role']) === 'admin'): ?>
-                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="admin/dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
                     <li><a href="logout.php">Logout</a></li>
                 <?php else: ?>
@@ -68,7 +68,7 @@ $user = $_SESSION['user'] ?? null;
                 <h3>Documents</h3>
             </a>
 
-            <a href="services/requests.php" class="service-card">
+            <a href="services/online_requests.php" class="service-card">
                 <span class="icon-circle">✔️</span>
                 <h3>Online Requests</h3>
             </a>

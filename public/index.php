@@ -49,14 +49,40 @@ foreach ($newsRows as $n) {
     <nav class="main-nav">
         <ul>
             <li><a href="index.php" class="active">Home</a></li>
-            <li><a href="about.php">About us</a></li>
-            <li><a href="services.php">Services</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="/my-project/public/offers.php">Offers</a></li>
+<li><a href="about.php">About us</a></li>
+<li><a href="services.php">Services</a></li>
+<li><a href="contact.php">Contact</a></li>
+<li><a href="offers.php">Offers</a></li>
+
+<?php if ($user): ?>
+    <?php if ($isAdmin): ?>
+        <li><a href="admin/dashboard.php">Dashboard</a></li>
+    <?php endif; ?>
+    <li><a href="logout.php">Logout</a></li>
+<?php else: ?>
+    <li><a href="login.php">Login</a></li>
+<?php endif; ?>
+
         </ul>
     </nav>
 </header>
+
+<div class="slider">
+  <img class="slide active" src="images/slide1.jpg" alt="">
+  <img class="slide" src="images/slide2.jpg" alt="">
+  <img class="slide" src="images/slide3.jpg" alt="">
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 3000);
+</script>
+
 
 <section id="hero" class="hero" style="background-image: url('images/background.img.png');">
     <div class="hero-overlay">
@@ -186,20 +212,22 @@ foreach ($newsRows as $n) {
     <h2>Contact</h2>
     <p>For any issues, suggestions or support, you can contact the municipal administration</p>
 
-    <form id="contactForm" class="contact-form">
-        <label>Name</label>
-        <input type="text" name="name" required>
+<form class="contact-form" method="post" action="contact.php">
+  <label>Name</label>
+  <input type="text" name="name" required>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+  <label>Email</label>
+  <input type="email" name="email" required>
 
-        <label>Message</label>
-        <textarea name="message" rows="4" required></textarea>
+  <label>Subject</label>
+  <input type="text" name="subject" required>
 
-        <p id="contactError" class="form-error"></p>
+  <label>Message</label>
+  <textarea name="message" rows="4" required></textarea>
 
-        <button type="submit" class="btn-primary">Send</button>
-    </form>
+  <button type="submit" class="btn-primary">Send</button>
+</form>
+
 </section>
 
 <section id="login" class="content-section login-section">

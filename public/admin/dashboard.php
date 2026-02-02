@@ -18,7 +18,17 @@ if(strtolower((string)($_SESSION['user']['role'] ?? '')) !=='admin'){
 }
 
 $user = $_SESSION['user'];
+
+require __DIR__ . '/_db.php';
+
+$newsCount = $pdo->query("SELECT COUNT(*) FROM news")->fetchColumn();
+$productsCount = $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
+$messagesCount = $pdo->query("SELECT COUNT(*) FROM contact_messages")->fetchColumn();
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +48,13 @@ $user = $_SESSION['user'];
         <span class="badge">ADMIN</span>
         </p>
     </div>
+
+    <div class="stats">
+    <div class="stat">📰 News: <b><?= $newsCount ?></b></div>
+    <div class="stat">📦 Products: <b><?= $productsCount ?></b></div>
+    <div class="stat">✉️ Messages: <b><?= $messagesCount ?></b></div>
+</div>
+
 
     <ul class="menu">
         <li>
