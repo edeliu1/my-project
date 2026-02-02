@@ -35,3 +35,12 @@ $user = $_SESSION['user'] ?? null;
    </ul>
   </nav>
 </header>
+
+<section class="education-page">
+    <div class="topbar">
+        <div class="titles">
+            <div class="breadcrumbs">Services / Education</div>
+            <h1 class="page-title">Education Services</h1>
+            <p class="subtitle">
+                An overview of education-related services in the municipality, including enrollments,
+                certificates, scholarships, and school transport information.
