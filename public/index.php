@@ -66,24 +66,6 @@ foreach ($newsRows as $n) {
         </ul>
     </nav>
 </header>
-
-<div class="slider">
-  <img class="slide active" src="images/slide1.jpg" alt="">
-  <img class="slide" src="images/slide2.jpg" alt="">
-  <img class="slide" src="images/slide3.jpg" alt="">
-</div>
-
-<script>
-  const slides = document.querySelectorAll('.slide');
-  let i = 0;
-  setInterval(() => {
-    slides[i].classList.remove('active');
-    i = (i + 1) % slides.length;
-    slides[i].classList.add('active');
-  }, 3000);
-</script>
-
-
 <section id="hero" class="hero" style="background-image: url('images/background.img.png');">
     <div class="hero-overlay">
         <h1>Smart City</h1>
@@ -212,22 +194,20 @@ foreach ($newsRows as $n) {
     <h2>Contact</h2>
     <p>For any issues, suggestions or support, you can contact the municipal administration</p>
 
-<form class="contact-form" method="post" action="contact.php">
-  <label>Name</label>
-  <input type="text" name="name" required>
+<form id="contactForm" class="contact-form" method="post" action="contact.php">
+        <label>Name</label>
+        <input type="text" name="name" required>
 
-  <label>Email</label>
-  <input type="email" name="email" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
 
-  <label>Subject</label>
-  <input type="text" name="subject" required>
+        <label>Message</label>
+        <textarea name="message" rows="4" required></textarea>
 
-  <label>Message</label>
-  <textarea name="message" rows="4" required></textarea>
+        <p id="contactError" class="form-error"></p>
 
-  <button type="submit" class="btn-primary">Send</button>
-</form>
-
+        <button type="submit" class="btn-primary">Send</button>
+    </form>
 </section>
 
 <section id="login" class="content-section login-section">
