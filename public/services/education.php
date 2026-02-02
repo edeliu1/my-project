@@ -76,5 +76,14 @@ $user = $_SESSION['user'] ?? null;
         <h3>School certificates</h3>
         <p class="meta">Requests for confirmations, attendance letters, and certificates.</p>
   </div> 
- </div>      
+ </div>  
+ 
+ <div class="item" id="svc-transport">
+    <div class="icon">🚌</div>
+    <div class="text">
+        <h3>School Transport</h3>
+        <p class="meta">Information on routes, eligibility, and transport rules.</p>
+    </div>
+   </div>
+  </div>    
 
