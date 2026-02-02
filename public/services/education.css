@@ -62,3 +62,13 @@
     font-weight: 900;
     margin-bottom: 14px;
 }
+
+.item{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    border: 1px solid #d7e3ff;
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-top: 12px;
+}
