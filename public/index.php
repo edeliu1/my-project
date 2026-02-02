@@ -229,9 +229,32 @@ foreach ($newsRows as $n) {
     </form>
 </section>
 
+<div class="slider">
+  <img class="slide active" src="images/city.jpg" alt="">
+  <img class="slide" src="images/city1.jpg" alt="">
+  <img class="slide" src="images/city3.jpg" alt="">
+  <img class="slide" src="images/aneksi1.jpg" alt="">
+  <img class="slide" src="images/aneksi2.jpg" alt="">
+  <img class="slide" src="images/aneksi3.jpg" alt="">
+  <img class="slide" src="images/mihalgrameno.jpg" alt="">
+  <img class="slide" src="images/transport.jpg" alt="">
+</div>
+
+
 <footer class="main-footer">
     <p>© 2025 Smart City Web Portal - Fushe Kosova</p>
 </footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let i = 0;
+
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 3000);
+</script>
 
 <script>
   window.NEWS_DATA = <?php echo json_encode($newsForWidget, JSON_UNESCAPED_UNICODE); ?>;
