@@ -2,6 +2,15 @@
 require __DIR__ . '/_guard.php';
 require __DIR__ . '/_db.php';
 require __DIR__ . '/_csrf.php';
+require __DIR__ . '/_audit.php';
+
+audit_log(
+    $pdo,
+    (int)$_SESSION['user']['id'],
+    'ADD_NEWS',
+    "Added news with title: $title"
+);
+
 
 $error = '';
 $success = '';
@@ -51,13 +60,20 @@ $rows = $pdo->query("
 </head>
 <body>
     <div class="permbajtja-admin">
-        <div class="shiriti-navigimit">
-            <h2>Manage News</h2>
-            <div class="lidhjet">
-                <a href="dashboard.php">Dashboard</a>
-                <a href="../logout.php">Logout</a>
-            </div>
-        </div>
+       <div class="shiriti-navigimit">
+  <h2>Admin Dashboard</h2>
+
+  <div class="lidhjet">
+    <a href="dashboard.php">Dashboard</a>
+    <a href="news_admin.php">News</a>
+    <a href="messages_admin.php">Messages</a>
+    <a href="users_admin.php">Users</a>
+    <a href="../index.php">Home</a>
+    <a href="../logout.php">Logout</a>
+  </div>
+</div>
+
+
 
             <?php if ($error): ?>
                 <div class="njoftim gabim"><?= htmlspecialchars($error)?></div>
