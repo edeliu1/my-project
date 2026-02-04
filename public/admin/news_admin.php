@@ -4,6 +4,9 @@ require __DIR__ . '/_db.php';
 require __DIR__ . '/_csrf.php';
 require __DIR__ . '/_audit.php';
 
+$title = '';
+$body  = '';
+
 audit_log(
     $pdo,
     (int)$_SESSION['user']['id'],
@@ -17,7 +20,6 @@ $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_check();
-
     $title = trim($_POST['title'] ?? '');
     $body  = trim($_POST['body'] ?? '');
 
